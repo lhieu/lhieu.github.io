@@ -72,7 +72,26 @@
             color: var(--primary-color);
         }
 
-     /* Lớp phủ cho header */
+    /* Hero Section - Cập nhật để thêm ảnh nền */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* Thêm ảnh nền và tùy chỉnh */
+            background-image: url('images/hero-bg.jpg'); /* Thay đổi đường dẫn ảnh của bạn */
+            background-size: cover; /* Ảnh sẽ phủ kín Hero Section */
+            background-position: center; /* Ảnh được căn giữa */
+            background-repeat: no-repeat; /* Không lặp lại ảnh */
+            
+            /* Thêm lớp phủ màu tối để chữ dễ đọc hơn */
+            position: relative;
+            z-index: 1; /* Đặt header ở lớp trên cùng */
+        }
+
+        /* Lớp phủ cho header */
         header::before {
             content: '';
             position: absolute;
