@@ -3,108 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Cá Nhân</title>
+    <title>Portfolio | Kỹ sư Kỹ thuật Máy tính</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome cho Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #2563eb;
+            --dark-color: #0f172a;
+            --light-bg: #f8fafc;
+            --text-main: #334155;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--light-bg);
         }
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            background: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        .header {
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 15px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 0 10%;
         }
-        .header h1 {
-            margin: 0;
-            color: #333;
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
         }
-        .header p {
-            margin: 5px 0;
-            color: #777;
+
+        header p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 700px;
         }
-        .section {
-            margin-top: 20px;
+
+        .btn {
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
         }
-        .section h2 {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-            color: #444;
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
         }
-        .item {
-            margin-top: 10px;
+
+        /* Section Styling */
+        section {
+            padding: 5rem 10%;
         }
-        .item h3 {
-            margin: 0;
-            font-size: 16px;
-            color: #222;
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            position: relative;
         }
-        .item span {
-            font-size: 14px;
-            color: #777;
+
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
-        ul {
-            padding-left: 20px;
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Skill Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background: #e2e8f0;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .social-links {
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <h1>Nguyễn Văn A</h1>
-        <p>Email: example@gmail.com | SĐT: 0123456789</p>
-        <p>Địa chỉ: Đà Nẵng, Việt Nam</p>
-    </div>
-
-    <div class="section">
-        <h2>Giới thiệu</h2>
-        <p>Tôi là một lập trình viên với niềm đam mê phát triển web và học hỏi công nghệ mới.</p>
-    </div>
-
-    <div class="section">
-        <h2>Kỹ năng</h2>
-        <ul>
-            <li>HTML, CSS, JavaScript</li>
-            <li>ReactJS / VueJS</li>
-            <li>NodeJS</li>
+    <nav>
+        <div class="logo">LPC.DEV</div>
+        <ul class="nav-links">
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#skills">Kỹ năng</a></li>
+            <li><a href="#projects">Dự án</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
         </ul>
-    </div>
+    </nav>
 
-    <div class="section">
-        <h2>Kinh nghiệm làm việc</h2>
-        <div class="item">
-            <h3>Công ty ABC</h3>
-            <span>2023 - Hiện tại</span>
-            <p>Phát triển website và tối ưu trải nghiệm người dùng.</p>
+    <header>
+        <h1>Xin chào, tôi là [Tên Của Bạn]</h1>
+        <p>Kỹ sư Kỹ thuật Máy tính | Chuyên gia Hệ thống nhúng & IoT | Đam mê nghiên cứu công nghệ Viễn thông 5G</p>
+        <a href="#projects" class="btn">Xem các dự án</a>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title">Về tôi</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p>Tôi là sinh viên ngành Kỹ thuật Máy tính tại Đại học Bách khoa - Đại học Đà Nẵng. Với nền tảng vững chắc về phần cứng và phần mềm, tôi tập trung vào việc tối ưu hóa hiệu suất hệ thống nhúng và nghiên cứu các giao thức truyền thông không dây như LoRaWAN và 5G NR.</p>
         </div>
-    </div>
+    </section>
 
-    <div class="section">
-        <h2>Học vấn</h2>
-        <div class="item">
-            <h3>Đại học XYZ</h3>
-            <span>2019 - 2023</span>
-            <p>Chuyên ngành Công nghệ thông tin.</p>
+    <section id="skills" style="background: #edf2f7;">
+        <h2 class="section-title">Kỹ năng chuyên môn</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-microchip"></i>
+                <h3>Embedded Systems</h3>
+                <p>Lập trình vi điều khiển STM32, ESP32, RAK3172. Thiết kế mạch PCB và giao tiếp ngoại vi (SPI, I2C, UART).</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-broadcast-tower"></i>
+                <h3>Telecommunications</h3>
+                <p>Mô phỏng kênh truyền, thuật toán lập lịch tài nguyên MAC layer trong 5G NR và triển khai hạ tầng LoRaWAN.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-code"></i>
+                <h3>Software & Tools</h3>
+                <p>Sử dụng thành thạo MATLAB/Simulink, Arduino IDE, STM32CubeIDE và môi trường macOS/Linux.</p>
+            </div>
         </div>
-    </div>
-
-    <div class="section">
-        <h2>Dự án</h2>
-        <div class="item">
-            <h3>Website bán hàng</h3>
-            <p>Xây dựng website thương mại điện tử bằng React và NodeJS.</p>
+        <div class="skills-container" style="margin-top: 3rem;">
+            <span class="skill-tag">C/C++</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">MATLAB</span>
+            <span class="skill-tag">LoRaWAN</span>
+            <span class="skill-tag">Edge AI</span>
+            <span class="skill-tag">Circuit Design</span>
         </div>
-    </div>
+    </section>
 
-</div>
+    <section id="projects">
+        <h2 class="section-title">Dự án nổi bật</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Mô phỏng 5G NR MAC Layer</h3>
+                <p>Phân tích và mô phỏng các thuật toán lập lịch tài nguyên nhằm tối ưu hóa băng thông và độ trễ.</p>
+            </div>
+            <div class="card">
+                <h3>Hệ thống đo mức nước LoRaWAN</h3>
+                <p>Sử dụng module RAK3172 và cảm biến để giám sát dữ liệu từ xa với mức tiêu thụ năng lượng cực thấp.</p>
+            </div>
+            <div class="card">
+                <h3>Edge AI Traffic Sign Recognition</h3>
+                <p>Triển khai mô hình nhận diện biển báo giao thông thời gian thực trên chip ESP32-S3.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Kết nối với tôi</h2>
+        <div style="text-align: center;">
+            <p>Bạn có dự án thú vị hay muốn trao đổi về công nghệ? Đừng ngần ngại liên hệ!</p>
+            <br>
+            <a href="mailto:email@cua-ban.com" class="btn">Gửi Email cho tôi</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p>&copy; 2026 [Tên Của Bạn]. Designed with ❤️ on macOS.</p>
+    </footer>
 
 </body>
 </html>
