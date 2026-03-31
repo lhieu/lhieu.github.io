@@ -83,8 +83,8 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background-image: url('images/hero-bg.jpg'); /* Đảm bảo có file ảnh nền thực tế */
-            background-color: #1e293b; /* Fallback color */
+            background-image: url('images/hero-bg.jpg'); 
+            background-color: #1e293b;
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -119,9 +119,18 @@
             font-weight: 300;
         }
 
-        .btn {
-            display: inline-block;
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             padding: 0.8rem 2.5rem;
             background: var(--primary-color);
             color: white;
@@ -130,12 +139,26 @@
             font-weight: 600;
             transition: var(--transition);
             box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+            border: 2px solid var(--primary-color);
         }
 
         .btn:hover {
             background: var(--secondary-color);
+            border-color: var(--secondary-color);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
         }
 
         /* Section Styling */
@@ -247,7 +270,7 @@
             color: var(--primary-color);
             font-size: 0.8rem;
             font-weight: 600;
-            padding: 0.2rem 0.6rem;
+            padding: 0.3rem 0.8rem;
             border-radius: 4px;
             margin-bottom: 1rem;
         }
@@ -351,14 +374,17 @@
     <header>
         <h1>LÊ VĂN HIẾU</h1>
         <p>Sinh viên Kỹ thuật Điện tử - Viễn thông | Nhà phát triển Hệ thống Nhúng & IoT năng lượng thấp</p>
-        <a href="#projects" class="btn">Xem Dự Án Nổi Bật</a>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn">Xem Dự Án Nổi Bật</a>
+            <!-- Nút Tải CV -->
+            <a href="Le_Van_Hieu_CV.pdf" class="btn btn-outline" download><i class="fas fa-file-download" style="margin-right: 8px;"></i>Tải CV (PDF)</a>
+        </div>
     </header>
 
     <section id="about">
         <h2 class="section-title">Về Tôi</h2>
         <div class="about-content">
             <div class="about-image">
-                <!-- Chèn ảnh đại diện thật của bạn vào đường dẫn src bên dưới -->
                 <img src="images/profile-pic.jpg" alt="Lê Văn Hiếu - Chuyên gia hệ thống nhúng">
             </div>
             <div class="about-text">
@@ -414,15 +440,16 @@
     <section id="projects">
         <h2 class="section-title">Dự Án Kinh Nghiệm</h2>
         <div class="grid">
+            <!-- Đã đưa dự án Nghiên cứu hiện tại lên đầu tiên -->
+            <div class="card">
+                <span class="project-year" style="background: #fef3c7; color: #d97706;">Nghiên cứu hiện tại</span>
+                <h3>UAV Multi-Rotor với LoRa Telemetry</h3>
+                <p>Phát triển máy bay không người lái đa cánh quạt dựa trên STM32, tích hợp hệ thống đo lường từ xa LoRa tầm xa và cơ chế thả tải trọng (payload release).</p>
+            </div>
             <div class="card">
                 <span class="project-year">2025</span>
                 <h3>FLOODGUARD</h3>
                 <p><strong>Hệ thống cảnh báo lũ sớm qua LoRa.</strong> Thiết kế hệ thống giám sát công suất thấp, tích hợp mạch in (PCB) tùy chỉnh và đồng bộ hóa dữ liệu lên Cloud.</p>
-            </div>
-            <div class="card">
-                <span class="project-year">Nghiên cứu hiện tại</span>
-                <h3>UAV Multi-Rotor với LoRa Telemetry</h3>
-                <p>Phát triển máy bay không người lái đa cánh quạt dựa trên STM32, tích hợp hệ thống đo lường từ xa LoRa tầm xa và cơ chế thả tải trọng (payload release).</p>
             </div>
             <div class="card">
                 <span class="project-year">2024</span>
@@ -479,7 +506,6 @@
     <footer>
         <div class="social-links">
             <a href="https://github.com/lhieu" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <!-- Vui lòng cập nhật các link mạng xã hội thực tế bên dưới -->
             <a href="https://linkedin.com/in/hieulv" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="https://facebook.com/hieuxiugeneral" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
         </div>
