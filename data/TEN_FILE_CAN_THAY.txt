@@ -1,0 +1,44 @@
+DANH SACH TEN FILE CO DINH TRONG data/
+=====================================
+
+A. DA CO SAN - DOI/THEM DE THAY NOI DUNG TREN WEBSITE
+
+  profile.jpg                        Ảnh chân dung trên trang chủ, JPG vuông (khuyên 600×600).
+  cv.pdf                             CV chính thức để tải xuống, PDF.
+  uav-photo.jpg                      Ảnh UAV chính, hiện trên trang chủ và trang UAV.
+  uav-test096.png                    Biểu đồ độ cao, vùng AltHold từ test_096 (mới nhất).
+  uav-test096-navigation.png         Biểu đồ GPS hAcc, vệ tinh, heading trust từ test_096.
+  uav-test092.png                    Biểu đồ lịch sử test_092 (vẫn giữ trong trang UAV).
+  uav-flight-control.png             Sơ đồ điều khiển bay, PID và safety gates.
+  uav-system.png                     Sơ đồ kiến trúc STM32F405 / Raspberry Pi 5.
+  uav-yolo-predictions.png           Hình ảnh dự đoán YOLOv8.
+  uav-yolo-training.png              Biểu đồ quá trình huấn luyện YOLOv8.
+  uav-yolo-pr.png                    Đường cong PR của YOLOv8 (đã chuẩn bị trong thư mục).
+  uav-landingpadnet.png              Sơ đồ LandingPadNet dự kiến.
+  uav-web-gcs.png                    Ảnh màn hình Web GCS đang mô phỏng.
+  uav-landing-pad.png                Bản thiết kế bãi đáp AprilTag.
+  uav-autoland-flow.png              Sơ đồ state machine hạ cánh dự kiến.
+  favicon.svg                        Biểu tượng website (SVG), nếu muốn thay.
+  uav-schematic.svg                  Sơ đồ UAV vector dự phòng (SVG).
+  project-floodguard.jpg             Ảnh chính trang dự án FLOODGUARD, JPG ngang khuyên 1280×720.
+  project-smart-light.jpg            Ảnh chính trang dự án SMART LIGHT, JPG ngang khuyên 1280×720.
+  project-music-player.jpg           Ảnh chính trang dự án MUSIC PLAYER, JPG ngang khuyên 1280×720.
+  project-analog-amplifier.jpg       Ảnh chính trang dự án 15W AMPLIFIER, JPG ngang khuyên 1280×720.
+  project-mobile-store.jpg           Ảnh chính trang dự án MOBILE STORE, JPG ngang khuyên 1280×720.
+
+B. CHUA CO - CHI CAN COPY VAO data/ LA TU HIEN (KHONG PHAI SUA HTML)
+
+  uav-f103-flight.jpg                Ảnh bổ sung thử nghiệm F103 → tự xuất hiện ở mục minh chứng UAV.
+  uav-f405-pcb.jpg                   Ảnh mạch F405 → tự xuất hiện ở mục minh chứng UAV.
+  uav-flight-f103.mp4                Video bay F103 → tự xuất hiện ở mục minh chứng UAV.
+  uav-alt-hold-f405.mp4              Video AltHold F405 → tự xuất hiện ở mục minh chứng UAV.
+  project-floodguard-demo.mp4        Video dự án FLOODGUARD → tự xuất hiện trên trang dự án.
+  project-smart-light-demo.mp4       Video dự án SMART LIGHT → tự xuất hiện trên trang dự án.
+  project-music-player-demo.mp4      Video dự án MUSIC PLAYER → tự xuất hiện trên trang dự án.
+  project-analog-amplifier-demo.mp4  Video dự án 15W AMPLIFIER → tự xuất hiện trên trang dự án.
+  project-mobile-store-demo.mp4      Video dự án MOBILE STORE → tự xuất hiện trên trang dự án.
+
+CHU Y: File .jpg phai LA ANH JPEG THUC, file .png phai LA ANH PNG.
+KHONG doi duoi .png thanh .jpg bang cach rename don thuan.
+Thay CV: chep file PDF cua ban vao data/ va dat ten cv.pdf (ghi de file cu).
+Sau khi cap nhat GitHub Pages, co the nhan Ctrl+Shift+R hoac Cmd+Shift+R.
