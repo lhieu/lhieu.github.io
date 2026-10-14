@@ -350,6 +350,157 @@
             display: inline-block;
         }
 
+
+        /* Featured UAV project: flight-proven baseline vs. work in progress */
+        .uav-featured {
+            grid-column: 1 / -1;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #c7d9f7;
+            background: #ffffff;
+        }
+
+        .uav-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2.5rem;
+            padding: 2.5rem;
+            background: linear-gradient(120deg, #edf5ff 0%, #f8fbff 65%, #e8f5fe 100%);
+            border-bottom: 1px solid #dbeafe;
+        }
+
+        .uav-intro { max-width: 780px; }
+        .uav-intro .uav-year {
+            color: #1d4ed8;
+            background: #dbeafe;
+            border-radius: 30px;
+        }
+        .uav-intro h3 {
+            font-size: clamp(1.45rem, 2.8vw, 2rem);
+            line-height: 1.25;
+            margin: 0.6rem 0 0.85rem;
+            color: #0f172a;
+        }
+        .uav-intro p {
+            color: #475569;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+        .uav-flight-proof {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 0.45rem;
+            flex: 0 0 230px;
+            padding: 1.5rem 1rem;
+            background: white;
+            border: 1px solid #bbf7d0;
+            border-top: 4px solid #16a34a;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+        }
+        .uav-flight-proof i { font-size: 1.9rem; color: #16a34a; }
+        .uav-flight-proof strong { color: #166534; font-size: 1.1rem; }
+        .uav-flight-proof span { color: #0f172a; font-size: 0.92rem; font-weight: 600; }
+        .uav-flight-proof small { color: #64748b; font-size: 0.78rem; }
+
+        .uav-stage-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.25rem;
+            padding: 1.75rem 2.5rem;
+        }
+        .uav-stage {
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            background: #ffffff;
+        }
+        .uav-stage-done { border-left: 4px solid #16a34a; }
+        .uav-stage-progress { border-left: 4px solid #2563eb; }
+        .uav-stage-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 0.8rem;
+        }
+        .uav-stage-label { color: #64748b; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+        .uav-stage-status { display: inline-flex; align-items: center; gap: 0.4rem; border-radius: 20px; padding: 0.25rem 0.7rem; font-size: 0.79rem; font-weight: 650; }
+        .uav-stage-status.is-done { color: #166534; background: #dcfce7; }
+        .uav-stage-status.is-progress { color: #1d4ed8; background: #dbeafe; }
+        .uav-stage h4 { font-size: 1.15rem; color: #0f172a; margin: 0 0 0.7rem; }
+        .uav-stage ul { padding-left: 1.2rem; color: #475569; }
+        .uav-stage li { margin: 0.65rem 0; font-size: 0.94rem; line-height: 1.75; }
+        .uav-stage li::marker { color: #60a5fa; }
+        .uav-stage-done li::marker { color: #22c55e; }
+        .uav-stage strong { color: #1e293b; }
+
+        .uav-architecture {
+            margin: 0 2.5rem 1.5rem;
+            padding: 1.3rem 1.5rem;
+            border-radius: 12px;
+            background: #f1f5f9;
+        }
+        .uav-architecture-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 0.65rem; margin-bottom: 1rem; color: #1e293b; }
+        .uav-architecture-heading > i { color: #2563eb; }
+        .uav-architecture-heading > span { margin-left: auto; color: #64748b; font-size: 0.8rem; }
+        .uav-flow { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+        .uav-flow-node {
+            display: flex;
+            min-height: 64px;
+            flex: 1 1 0;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid #dbeafe;
+            border-radius: 9px;
+            padding: 0.75rem 0.55rem;
+            color: #1e40af;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        .uav-flow-node small { flex-basis: 100%; color: #64748b; font-size: 0.75rem; font-weight: 400; }
+        .uav-flow-arrow { color: #60a5fa; font-size: 1.45rem; font-weight: 600; line-height: 1; flex: 0 0 auto; }
+        .uav-link-note { margin: 0.9rem 0 0; color: #475569; font-size: 0.87rem; }
+        .uav-link-note i { color: #2563eb; margin-right: 0.3rem; }
+
+        .uav-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0 2.5rem 2rem;
+        }
+        .uav-tech-stack span { background: #eff6ff; color: #1d4ed8; border: 1px solid #dbeafe; padding: 0.4rem 0.7rem; border-radius: 6px; font-size: 0.79rem; font-weight: 600; }
+
+        @media (max-width: 900px) {
+            .uav-top { align-items: flex-start; }
+            .uav-flight-proof { flex: 0 0 195px; }
+            .uav-flow { flex-wrap: wrap; justify-content: center; }
+            .uav-flow-node { flex: 1 1 135px; }
+            .uav-flow-arrow { transform: rotate(0deg); }
+        }
+
+        @media (max-width: 680px) {
+            .uav-top { flex-direction: column; gap: 1.5rem; padding: 1.5rem; }
+            .uav-flight-proof { flex: auto; align-self: stretch; }
+            .uav-stage-grid { grid-template-columns: 1fr; padding: 1.25rem 1.5rem; }
+            .uav-stage { padding: 1.2rem; }
+            .uav-architecture { margin: 0 1.5rem 1.25rem; padding: 1rem; }
+            .uav-flow-node { flex: 1 1 100%; min-height: 48px; }
+            .uav-flow-arrow { transform: rotate(90deg); }
+            .uav-tech-stack { padding: 0 1.5rem 1.5rem; }
+            .uav-architecture-heading > span { margin-left: 0; }
+        }
+
         @media (max-width: 768px) {
             header h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
@@ -442,12 +593,79 @@
     <section id="projects">
         <h2 class="section-title">Dự Án Kinh Nghiệm</h2>
         <div class="grid">
-            <!-- Đã đưa dự án Nghiên cứu hiện tại lên đầu tiên -->
-            <div class="card">
-                <span class="project-year" style="background: #fef3c7; color: #d97706;">Nghiên cứu hiện tại</span>
-                <h3>UAV Multi-Rotor với LoRa Telemetry</h3>
-                <p>Phát triển máy bay không người lái đa cánh quạt dựa trên STM32, tích hợp hệ thống đo lường từ xa LoRa tầm xa và cơ chế thả tải trọng (payload release).</p>
-            </div>
+            <!-- UAV: Phan biet ket qua bay da kiem chung va cac module dang phat trien -->
+            <article class="card uav-featured" id="uav-project">
+                <div class="uav-top">
+                    <div class="uav-intro">
+                        <span class="project-year uav-year"><i class="fas fa-helicopter" aria-hidden="true"></i> Dự án nổi bật · 2026</span>
+                        <h3>UAV tự phát triển: STM32 Flight Controller &amp; Hạ cánh thông minh</h3>
+                        <p>Thiết kế và phát triển UAV đa cánh quạt từ bộ điều khiển bay tự lập trình, hướng đến hệ thống tự động nhận diện bãi đáp, hạ cánh bằng thị giác máy tính và giám sát qua trung tâm chỉ huy Web.</p>
+                    </div>
+                    <div class="uav-flight-proof">
+                        <i class="fas fa-check-circle" aria-hidden="true"></i>
+                        <strong>Đã bay ổn định</strong>
+                        <span>STM32F103 + ICM20602</span>
+                        <small>Điều khiển thủ công thực tế</small>
+                    </div>
+                </div>
+
+                <div class="uav-stage-grid">
+                    <section class="uav-stage uav-stage-done" aria-label="Giai đoạn đã hoàn thành">
+                        <div class="uav-stage-head">
+                            <span class="uav-stage-label">Giai đoạn 01</span>
+                            <span class="uav-stage-status is-done"><i class="fas fa-check" aria-hidden="true"></i> Đã hoàn thành</span>
+                        </div>
+                        <h4>Bay thủ công ổn định</h4>
+                        <ul>
+                            <li>Phát triển bộ điều khiển bay (FC) với <strong>STM32F103</strong> và cảm biến quán tính <strong>ICM20602</strong>.</li>
+                            <li>Thử nghiệm bay thành công và duy trì khả năng điều khiển ổn định.</li>
+                            <li>Điều khiển UAV bằng bộ tay điều khiển <strong>Mini6C</strong> và <strong>MC7RE</strong>.</li>
+                        </ul>
+                    </section>
+
+                    <section class="uav-stage uav-stage-progress" aria-label="Giai đoạn đang phát triển">
+                        <div class="uav-stage-head">
+                            <span class="uav-stage-label">Giai đoạn 02</span>
+                            <span class="uav-stage-status is-progress"><i class="fas fa-code-branch" aria-hidden="true"></i> Đang phát triển</span>
+                        </div>
+                        <h4>FC mới &amp; hạ cánh tự động</h4>
+                        <ul>
+                            <li>Phát triển mạch điều khiển bay <strong>STM32F405</strong> thế hệ tiếp theo.</li>
+                            <li>Sử dụng <strong>Raspberry Pi 5</strong> làm hệ thống xử lý ảnh và tác vụ cấp cao.</li>
+                            <li>Xây dựng mô hình nhận diện bãi đáp riêng, theo hướng tiếp cận của <strong>YOLOv8</strong>, phục vụ căn chỉnh và hạ cánh tự động.</li>
+                            <li>Tích hợp <strong>LoRa</strong> để truyền dữ liệu và phát triển <strong>Web GCS</strong> (trung tâm chỉ huy) để giám sát, điều khiển UAV.</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="uav-architecture">
+                    <div class="uav-architecture-heading">
+                        <i class="fas fa-sitemap" aria-hidden="true"></i>
+                        <strong>Định hướng kiến trúc hệ thống</strong>
+                        <span>Đang triển khai</span>
+                    </div>
+                    <div class="uav-flow" aria-label="Luồng xử lý dự kiến: Camera đến Raspberry Pi 5, đến STM32F405 và thực hiện hạ cánh">
+                        <span class="uav-flow-node"><i class="fas fa-camera" aria-hidden="true"></i> Camera</span>
+                        <span class="uav-flow-arrow" aria-hidden="true">→</span>
+                        <span class="uav-flow-node"><i class="fas fa-brain" aria-hidden="true"></i> Raspberry Pi 5 <small>Nhận diện bãi đáp</small></span>
+                        <span class="uav-flow-arrow" aria-hidden="true">→</span>
+                        <span class="uav-flow-node"><i class="fas fa-microchip" aria-hidden="true"></i> STM32F405 <small>Điều khiển bay</small></span>
+                        <span class="uav-flow-arrow" aria-hidden="true">→</span>
+                        <span class="uav-flow-node"><i class="fas fa-plane-arrival" aria-hidden="true"></i> Hạ cánh tự động</span>
+                    </div>
+                    <p class="uav-link-note"><i class="fas fa-broadcast-tower" aria-hidden="true"></i> LoRa truyền dữ liệu giữa UAV và trạm mặt đất; thông tin được tích hợp vào Web GCS (trung tâm chỉ huy).</p>
+                </div>
+
+                <div class="uav-tech-stack" aria-label="Các công nghệ sử dụng và đang phát triển">
+                    <span>STM32F103</span>
+                    <span>STM32F405</span>
+                    <span>ICM20602</span>
+                    <span>Raspberry Pi 5</span>
+                    <span>Computer Vision</span>
+                    <span>LoRa</span>
+                    <span>Web GCS</span>
+                </div>
+            </article>
             <div class="card">
                 <span class="project-year">2025</span>
                 <h3>FLOODGUARD</h3>
@@ -512,7 +730,7 @@
     <footer>
         <div class="social-links">
             <a href="https://github.com/lhieu" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/hieulv" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://linkedin.com/in/hieulv202" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="https://facebook.com/hieuxiugeneral" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
         </div>
         <p>&copy; 2026 Lê Văn Hiếu. Phát triển với đam mê công nghệ nhúng.</p>
