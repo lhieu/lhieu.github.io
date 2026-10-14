@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CV trực tuyến của Lê Văn Hiếu, sinh viên Kỹ thuật Điện tử – Viễn thông, quan tâm đến thực tập Embedded/Firmware/IoT.">
+<meta name="theme-color" content="#10243d"><title>CV | Lê Văn Hiếu – Embedded & Firmware</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data/favicon.svg"><link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js" defer></script></head><body class="cv-page">
+<header class="topbar"><div class="wrap nav-inner"><a class="brand" href="index.html" aria-label="Lê Văn Hiếu, trang chủ"><span class="brand-mark">H.</span><span>HIEU<span class="brand-dot">.</span>DEV</span></a>
+<button class="menu-button" type="button" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="primary-menu"><span></span><span></span><span></span></button>
+<nav class="primary-nav" id="primary-menu" aria-label="Điều hướng chính"><a href="index.html#about">Về tôi</a><a href="index.html#skills">Kỹ năng</a><a href="uav.html">Dự án UAV</a><a href="index.html#projects">Dự án khác</a><a class="nav-cta" href="index.html#contact">Liên hệ ↗</a></nav></div></header>
+<main class="cv-paper-wrapper" id="main">
+<div class="wrap cv-print-toolbar"><a href="index.html#about">← Về trang portfolio</a><div class="cv-toolbar-actions"><a class="btn btn-light" href="data/cv.pdf" download="Le_Van_Hieu_CV.pdf">Tải CV.pdf ↓</a><button type="button" class="btn btn-primary" onclick="window.print()">In / Lưu PDF ↓</button></div></div>
+<article class="cv-paper" aria-label="Curriculum vitae – Lê Văn Hiếu">
+<header class="cv-paper-head"><div><div class="eyebrow">Curriculum Vitae · Engineering</div><h1>Lê Văn <span>Hiếu</span></h1><p>Sinh viên Kỹ thuật Điện tử – Viễn thông</p></div><div class="cv-paper-contact"><span>Đà Nẵng, Việt Nam</span><a href="tel:+84355030566">0355 030 566</a><a href="mailto:hieu.lv202@gmail.com">hieu.lv202@gmail.com</a><a href="https://github.com/lhieu">github.com/lhieu</a><a href="https://linkedin.com/in/hieulv">linkedin.com/in/hieulv</a></div></header>
+<section class="cv-paper-section"><h2>Mục tiêu nghề nghiệp</h2><p>Tìm kiếm cơ hội thực tập trong lĩnh vực <strong>Embedded Systems, Firmware hoặc IoT</strong>. Mong muốn vận dụng kiến thức C/C++, STM32, ESP32, thiết kế mạch và giao tiếp thiết bị vào sản phẩm thực tế, đồng thời học hỏi quy trình phát triển kỹ thuật trong doanh nghiệp.</p></section>
+<section class="cv-paper-section"><h2>Học vấn</h2><div class="cv-paper-entry"><div><h3>Trường Đại học Bách khoa – Đại học Đà Nẵng</h3><p>Kỹ thuật Điện tử – Viễn thông · GPA chuyên ngành (2 kỳ gần nhất): 3.25/4.0</p></div><span>2022 – 2027 (dự kiến)</span></div></section>
+<section class="cv-paper-section"><h2>Kỹ năng kỹ thuật</h2><div class="cv-paper-cols"><div><p><strong>Embedded / Firmware:</strong> C/C++, STM32, ESP32, ESP-IDF, STM32CubeIDE, SPI/I²C/UART, tích hợp cảm biến.</p><p><strong>Hardware:</strong> KiCad, thiết kế PCB, mạch analog, lắp ráp và kiểm thử phần cứng.</p></div><div><p><strong>Connectivity / Software:</strong> LoRa, Wi-Fi, MQTT, REST API, HTML/CSS/JS, Git/GitHub.</p><p><strong>Nghiên cứu:</strong> Flight control 400 Hz, PID, GPS/compass, telemetry, baseline Computer Vision (đang phát triển).</p></div></div></section>
+<section class="cv-paper-section"><h2>Dự án tiêu biểu</h2>
+<div class="cv-paper-entry"><div><h3>Custom UAV Flight Controller <a href="uav.html">↗ Chi tiết</a></h3><p><strong>Đã đạt được:</strong> Tự phát triển STM32F103 + ICM20602 (bay ổn định); nâng cấp STM32F405 chạy vòng điều khiển 400 Hz, Stabilize/AltHold. Log test_096 ghi nhận ~109 giây AltHold được kích hoạt liên tục, độ cao tối đa ước lượng 6,74 m (chưa đo sai số theo setpoint).</p><p><strong>Đang phát triển:</strong> GPS/la bàn và Position Hold shadow; Raspberry Pi 5 gắn trên UAV; YOLOv8n đã huấn luyện (validation nội bộ), Web GCS mô phỏng; LoRa và autoland đang phát triển.</p></div><span>Hiện tại</span></div>
+<div class="cv-paper-entry"><div><h3>FLOODGUARD <a href="projects/floodguard.html">↗ Chi tiết</a></h3><p>Hệ thống cảnh báo lũ sớm sử dụng LoRa, PCB tùy chỉnh và định hướng đồng bộ dữ liệu lên Cloud.</p></div><span>2025</span></div>
+<div class="cv-paper-entry"><div><h3>Smart Light IoT System <a href="projects/smart-light.html">↗ Chi tiết</a></h3><p>ESP32-C3, ESP-IDF và MQTT; điều khiển ánh sáng qua Web/điện thoại/trợ lý giọng nói.</p></div><span>2024</span></div>
+<div class="cv-paper-entry"><div><h3>Các dự án khác</h3><p>ESP32-C3 Music Player (SPI), khuếch đại analog OTL 15W, quản lý cửa hàng bằng C++ hướng đối tượng.</p></div><span>2023–2024</span></div>
+</section>
+<footer class="cv-paper-foot">Bản CV trực tuyến tổng hợp từ thông tin trên portfolio. Có thể in hoặc chọn "Lưu thành PDF" trong trình duyệt; hãy kiểm tra thông tin trước khi gửi nhà tuyển dụng.</footer>
+</article>
+</main><footer class="footer cv-screen-footer"><div class="wrap"><span>© 2026 Lê Văn Hiếu · Engineering portfolio</span><a href="index.html">Về portfolio ↗</a></div></footer>
+</body></html>

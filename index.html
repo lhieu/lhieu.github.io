@@ -1,740 +1,114 @@
 <!DOCTYPE html>
+
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lê Văn Hiếu | Portfolio - Embedded Systems & IoT</title>
-    <link rel="icon" type="image/png" href="iot-icon.png">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome cho Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --dark-color: #0f172a;
-            --light-bg: #f8fafc;
-            --text-main: #334155;
-            --text-light: #64748b;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-main);
-            background-color: var(--light-bg);
-        }
-
-        /* Navigation */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            backdrop-filter: blur(10px);
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-image: url('image/hero-bg.png'); 
-            background-color: #1e293b;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            position: relative;
-            z-index: 1;
-            padding: 0 20px;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(15, 23, 42, 0.85);
-            z-index: -1;
-        }
-
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            color: white;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-
-        header p {
-            font-size: 1.25rem;
-            color: #cbd5e1;
-            max-width: 800px;
-            font-weight: 300;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.8rem 2.5rem;
-            background: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: var(--transition);
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn:hover {
-            background: var(--secondary-color);
-            border-color: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            box-shadow: none;
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: white;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 6rem 10%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            font-size: 2.25rem;
-            color: var(--dark-color);
-            position: relative;
-            font-weight: 700;
-        }
-
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background: var(--primary-color);
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        /* About Section */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .about-image img {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 8px solid white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .about-text {
-            flex: 1;
-            font-size: 1.1rem;
-        }
-        
-        .about-text p {
-            margin-bottom: 1rem;
-        }
-        
-        .education-box {
-            background: white;
-            padding: 1.5rem;
-            border-left: 4px solid var(--primary-color);
-            border-radius: 0 8px 8px 0;
-            margin-top: 1.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-        }
-
-        /* Grid Layouts */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            transition: var(--transition);
-            border: 1px solid #f1f5f9;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-color: #e2e8f0;
-        }
-
-        .card i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .card h3 {
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
-        }
-
-        .card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-        
-        .project-year {
-            display: inline-block;
-            background: #e0e7ff;
-            color: var(--primary-color);
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-        }
-
-        /* Skill Tags */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .skill-tag {
-            background: white;
-            color: var(--primary-color);
-            padding: 0.6rem 1.5rem;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-            border: 1px solid #e2e8f0;
-            transition: var(--transition);
-        }
-        
-        .skill-tag:hover {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-
-        /* Contact Section */
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-main);
-            font-weight: 500;
-        }
-
-        .contact-item i {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 4rem 0;
-        }
-
-        .social-links {
-            margin-bottom: 1.5rem;
-        }
-
-        .social-links a {
-            color: #cbd5e1;
-            font-size: 1.8rem;
-            margin: 0 1rem;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            color: white;
-            transform: translateY(-3px);
-            display: inline-block;
-        }
-
-
-        /* Featured UAV project: flight-proven baseline vs. work in progress */
-        .uav-featured {
-            grid-column: 1 / -1;
-            padding: 0;
-            overflow: hidden;
-            border: 1px solid #c7d9f7;
-            background: #ffffff;
-        }
-
-        .uav-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2.5rem;
-            padding: 2.5rem;
-            background: linear-gradient(120deg, #edf5ff 0%, #f8fbff 65%, #e8f5fe 100%);
-            border-bottom: 1px solid #dbeafe;
-        }
-
-        .uav-intro { max-width: 780px; }
-        .uav-intro .uav-year {
-            color: #1d4ed8;
-            background: #dbeafe;
-            border-radius: 30px;
-        }
-        .uav-intro h3 {
-            font-size: clamp(1.45rem, 2.8vw, 2rem);
-            line-height: 1.25;
-            margin: 0.6rem 0 0.85rem;
-            color: #0f172a;
-        }
-        .uav-intro p {
-            color: #475569;
-            font-size: 1rem;
-            line-height: 1.75;
-        }
-        .uav-flight-proof {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            gap: 0.45rem;
-            flex: 0 0 230px;
-            padding: 1.5rem 1rem;
-            background: white;
-            border: 1px solid #bbf7d0;
-            border-top: 4px solid #16a34a;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-        }
-        .uav-flight-proof i { font-size: 1.9rem; color: #16a34a; }
-        .uav-flight-proof strong { color: #166534; font-size: 1.1rem; }
-        .uav-flight-proof span { color: #0f172a; font-size: 0.92rem; font-weight: 600; }
-        .uav-flight-proof small { color: #64748b; font-size: 0.78rem; }
-
-        .uav-stage-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1.25rem;
-            padding: 1.75rem 2.5rem;
-        }
-        .uav-stage {
-            padding: 1.5rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            background: #ffffff;
-        }
-        .uav-stage-done { border-left: 4px solid #16a34a; }
-        .uav-stage-progress { border-left: 4px solid #2563eb; }
-        .uav-stage-head {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-bottom: 0.8rem;
-        }
-        .uav-stage-label { color: #64748b; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
-        .uav-stage-status { display: inline-flex; align-items: center; gap: 0.4rem; border-radius: 20px; padding: 0.25rem 0.7rem; font-size: 0.79rem; font-weight: 650; }
-        .uav-stage-status.is-done { color: #166534; background: #dcfce7; }
-        .uav-stage-status.is-progress { color: #1d4ed8; background: #dbeafe; }
-        .uav-stage h4 { font-size: 1.15rem; color: #0f172a; margin: 0 0 0.7rem; }
-        .uav-stage ul { padding-left: 1.2rem; color: #475569; }
-        .uav-stage li { margin: 0.65rem 0; font-size: 0.94rem; line-height: 1.75; }
-        .uav-stage li::marker { color: #60a5fa; }
-        .uav-stage-done li::marker { color: #22c55e; }
-        .uav-stage strong { color: #1e293b; }
-
-        .uav-architecture {
-            margin: 0 2.5rem 1.5rem;
-            padding: 1.3rem 1.5rem;
-            border-radius: 12px;
-            background: #f1f5f9;
-        }
-        .uav-architecture-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 0.65rem; margin-bottom: 1rem; color: #1e293b; }
-        .uav-architecture-heading > i { color: #2563eb; }
-        .uav-architecture-heading > span { margin-left: auto; color: #64748b; font-size: 0.8rem; }
-        .uav-flow { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
-        .uav-flow-node {
-            display: flex;
-            min-height: 64px;
-            flex: 1 1 0;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            text-align: center;
-            background: #ffffff;
-            border: 1px solid #dbeafe;
-            border-radius: 9px;
-            padding: 0.75rem 0.55rem;
-            color: #1e40af;
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-        .uav-flow-node small { flex-basis: 100%; color: #64748b; font-size: 0.75rem; font-weight: 400; }
-        .uav-flow-arrow { color: #60a5fa; font-size: 1.45rem; font-weight: 600; line-height: 1; flex: 0 0 auto; }
-        .uav-link-note { margin: 0.9rem 0 0; color: #475569; font-size: 0.87rem; }
-        .uav-link-note i { color: #2563eb; margin-right: 0.3rem; }
-
-        .uav-tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 0.55rem;
-            padding: 0 2.5rem 2rem;
-        }
-        .uav-tech-stack span { background: #eff6ff; color: #1d4ed8; border: 1px solid #dbeafe; padding: 0.4rem 0.7rem; border-radius: 6px; font-size: 0.79rem; font-weight: 600; }
-
-        @media (max-width: 900px) {
-            .uav-top { align-items: flex-start; }
-            .uav-flight-proof { flex: 0 0 195px; }
-            .uav-flow { flex-wrap: wrap; justify-content: center; }
-            .uav-flow-node { flex: 1 1 135px; }
-            .uav-flow-arrow { transform: rotate(0deg); }
-        }
-
-        @media (max-width: 680px) {
-            .uav-top { flex-direction: column; gap: 1.5rem; padding: 1.5rem; }
-            .uav-flight-proof { flex: auto; align-self: stretch; }
-            .uav-stage-grid { grid-template-columns: 1fr; padding: 1.25rem 1.5rem; }
-            .uav-stage { padding: 1.2rem; }
-            .uav-architecture { margin: 0 1.5rem 1.25rem; padding: 1rem; }
-            .uav-flow-node { flex: 1 1 100%; min-height: 48px; }
-            .uav-flow-arrow { transform: rotate(90deg); }
-            .uav-tech-stack { padding: 0 1.5rem 1.5rem; }
-            .uav-architecture-heading > span { margin-left: 0; }
-        }
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
-            .about-content { flex-direction: column; text-align: center; }
-            .education-box { text-align: left; }
-            section { padding: 4rem 5%; }
-            header { background-attachment: scroll; background-position: center top; }
-        }
-    </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Portfolio cá nhân Lê Văn Hiếu – sinh viên Kỹ thuật Điện tử – Viễn thông, tìm kiếm cơ hội thực tập Embedded/Firmware/IoT. Kỹ năng STM32, ESP32, PCB và các dự án kỹ thuật thực tế." name="description"/>
+<meta content="#10243d" name="theme-color"/>
+<title>Lê Văn Hiếu | Portfolio ứng tuyển Embedded &amp; Firmware</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="data/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="assets/style.css" rel="stylesheet"/>
+<script defer="" src="assets/uav-progress.js"></script>
+<script defer="" src="assets/site.js"></script>
 </head>
 <body>
-
-    <nav>
-        <div class="logo">HIEU.DEV</div>
-        <ul class="nav-links">
-            <li><a href="#about">Giới thiệu</a></li>
-            <li><a href="#skills">Kỹ năng</a></li>
-            <li><a href="#projects">Dự án</a></li>
-            <li><a href="#contact">Liên hệ</a></li>
-        </ul>
-    </nav>
-
-    <header>
-        <h1>LÊ VĂN HIẾU</h1>
-        <p>Sinh viên Kỹ thuật Điện tử - Viễn thông | Nhà phát triển Hệ thống Nhúng & IoT năng lượng thấp</p>
-        <div class="hero-buttons">
-            <a href="#projects" class="btn">Xem Dự Án Nổi Bật</a>
-            <!-- Nút Tải CV -->
-            <a href="Le_Van_Hieu_CV.pdf" class="btn btn-outline" download><i class="fas fa-file-download" style="margin-right: 8px;"></i>Tải CV (PDF)</a>
-            <a href="https://github.com/lhieu" target="_blank" class="btn btn-outline"><i class="fab fa-github" style="margin-right: 8px;"></i>GitHub</a>
-        </div>
-    </header>
-
-    <section id="about">
-        <h2 class="section-title">Về Tôi</h2>
-        <div class="about-content">
-            <div class="about-image">
-                <img src="image/profile-pic.jpg" alt="Lê Văn Hiếu - Chuyên gia hệ thống nhúng">
-            </div>
-            <div class="about-text">
-                <p>Xin chào! Tôi là sinh viên ngành Kỹ thuật Điện tử - Viễn thông với niềm đam mê sâu sắc dành cho thiết kế hệ thống nhúng, giao tiếp không dây và hệ thống IoT tối ưu hóa năng lượng.</p>
-                <p>Tôi có kinh nghiệm trong việc phát triển các hệ thống IoT từ đầu đến cuối (end-to-end), bao gồm lập trình firmware, thiết kế mạch in (PCB), tích hợp giao thức LoRa, xây dựng API backend và triển khai hệ thống lên đám mây (Cloud). Trọng tâm nghiên cứu của tôi là các hệ thống đo lường từ xa (telemetry) và ứng dụng không dây khoảng cách xa.</p>
-                
-                <div class="education-box">
-                    <h3 style="color: var(--dark-color); margin-bottom: 0.5rem;"><i class="fas fa-graduation-cap" style="color: var(--primary-color); margin-right: 8px;"></i>Học vấn</h3>
-                    <p style="margin: 0;"><strong>Đại học Bách khoa - Đại học Đà Nẵng</strong></p>
-                    <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">Kỹ sư Kỹ thuật Điện tử - Viễn thông (2022 - Dự kiến 2027)</p>
-                    <p style="margin: 0; color: var(--primary-color); font-weight: 600;">GPA Chuyên ngành (2 kỳ gần nhất): 3.25/4.0</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" style="background: #edf2f7;">
-        <h2 class="section-title">Kỹ Năng Chuyên Môn</h2>
-        <div class="grid" style="margin-bottom: 3rem;">
-            <div class="card">
-                <i class="fas fa-microchip"></i>
-                <h3>Hệ thống nhúng</h3>
-                <p>Lập trình vi điều khiển STM32, ESP32, Arduino và module RAK3172. Tối ưu hóa năng lượng (Low-power systems).</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-broadcast-tower"></i>
-                <h3>Giao tiếp không dây</h3>
-                <p>Kiến thức chuyên sâu về công nghệ LoRa, giao thức MQTT, và WiFi cho các ứng dụng đo lường từ xa.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-network-wired"></i>
-                <h3>Thiết kế Phần cứng</h3>
-                <p>Thiết kế mạch in (PCB) với KiCad. Thiết kế mạch Analog và lắp ráp phần cứng tùy chỉnh.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-code"></i>
-                <h3>Phần mềm & IoT</h3>
-                <p>Lập trình C/C++, HTML/JS. Phát triển REST API, triển khai Cloud, Quản lý mã nguồn với GitHub.</p>
-            </div>
-        </div>
-        
-        <div class="skills-container">
-            <span class="skill-tag">C/C++</span>
-            <span class="skill-tag">STM32 / ESP32</span>
-            <span class="skill-tag">LoRaWAN</span>
-            <span class="skill-tag">KiCad (PCB Design)</span>
-            <span class="skill-tag">MQTT & REST API</span>
-            <span class="skill-tag">Analog Design</span>
-            <span class="skill-tag">GitHub</span>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title">Dự Án Kinh Nghiệm</h2>
-        <div class="grid">
-            <!-- UAV: Phan biet ket qua bay da kiem chung va cac module dang phat trien -->
-            <article class="card uav-featured" id="uav-project">
-                <div class="uav-top">
-                    <div class="uav-intro">
-                        <span class="project-year uav-year"><i class="fas fa-helicopter" aria-hidden="true"></i> Dự án nổi bật · 2026</span>
-                        <h3>UAV tự phát triển: STM32 Flight Controller &amp; Hạ cánh thông minh</h3>
-                        <p>Thiết kế và phát triển UAV đa cánh quạt từ bộ điều khiển bay tự lập trình, hướng đến hệ thống tự động nhận diện bãi đáp, hạ cánh bằng thị giác máy tính và giám sát qua trung tâm chỉ huy Web.</p>
-                    </div>
-                    <div class="uav-flight-proof">
-                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                        <strong>Đã bay ổn định</strong>
-                        <span>STM32F103 + ICM20602</span>
-                        <small>Điều khiển thủ công thực tế</small>
-                    </div>
-                </div>
-
-                <div class="uav-stage-grid">
-                    <section class="uav-stage uav-stage-done" aria-label="Giai đoạn đã hoàn thành">
-                        <div class="uav-stage-head">
-                            <span class="uav-stage-label">Giai đoạn 01</span>
-                            <span class="uav-stage-status is-done"><i class="fas fa-check" aria-hidden="true"></i> Đã hoàn thành</span>
-                        </div>
-                        <h4>Bay thủ công ổn định</h4>
-                        <ul>
-                            <li>Phát triển bộ điều khiển bay (FC) với <strong>STM32F103</strong> và cảm biến quán tính <strong>ICM20602</strong>.</li>
-                            <li>Thử nghiệm bay thành công và duy trì khả năng điều khiển ổn định.</li>
-                            <li>Điều khiển UAV bằng bộ tay điều khiển <strong>Mini6C</strong> và <strong>MC7RE</strong>.</li>
-                        </ul>
-                    </section>
-
-                    <section class="uav-stage uav-stage-progress" aria-label="Giai đoạn đang phát triển">
-                        <div class="uav-stage-head">
-                            <span class="uav-stage-label">Giai đoạn 02</span>
-                            <span class="uav-stage-status is-progress"><i class="fas fa-code-branch" aria-hidden="true"></i> Đang phát triển</span>
-                        </div>
-                        <h4>FC mới &amp; hạ cánh tự động</h4>
-                        <ul>
-                            <li>Phát triển mạch điều khiển bay <strong>STM32F405</strong> thế hệ tiếp theo.</li>
-                            <li>Sử dụng <strong>Raspberry Pi 5</strong> làm hệ thống xử lý ảnh và tác vụ cấp cao.</li>
-                            <li>Xây dựng mô hình nhận diện bãi đáp riêng, theo hướng tiếp cận của <strong>YOLOv8</strong>, phục vụ căn chỉnh và hạ cánh tự động.</li>
-                            <li>Tích hợp <strong>LoRa</strong> để truyền dữ liệu và phát triển <strong>Web GCS</strong> (trung tâm chỉ huy) để giám sát, điều khiển UAV.</li>
-                        </ul>
-                    </section>
-                </div>
-
-                <div class="uav-architecture">
-                    <div class="uav-architecture-heading">
-                        <i class="fas fa-sitemap" aria-hidden="true"></i>
-                        <strong>Định hướng kiến trúc hệ thống</strong>
-                        <span>Đang triển khai</span>
-                    </div>
-                    <div class="uav-flow" aria-label="Luồng xử lý dự kiến: Camera đến Raspberry Pi 5, đến STM32F405 và thực hiện hạ cánh">
-                        <span class="uav-flow-node"><i class="fas fa-camera" aria-hidden="true"></i> Camera</span>
-                        <span class="uav-flow-arrow" aria-hidden="true">→</span>
-                        <span class="uav-flow-node"><i class="fas fa-brain" aria-hidden="true"></i> Raspberry Pi 5 <small>Nhận diện bãi đáp</small></span>
-                        <span class="uav-flow-arrow" aria-hidden="true">→</span>
-                        <span class="uav-flow-node"><i class="fas fa-microchip" aria-hidden="true"></i> STM32F405 <small>Điều khiển bay</small></span>
-                        <span class="uav-flow-arrow" aria-hidden="true">→</span>
-                        <span class="uav-flow-node"><i class="fas fa-plane-arrival" aria-hidden="true"></i> Hạ cánh tự động</span>
-                    </div>
-                    <p class="uav-link-note"><i class="fas fa-broadcast-tower" aria-hidden="true"></i> LoRa truyền dữ liệu giữa UAV và trạm mặt đất; thông tin được tích hợp vào Web GCS (trung tâm chỉ huy).</p>
-                </div>
-
-                <div class="uav-tech-stack" aria-label="Các công nghệ sử dụng và đang phát triển">
-                    <span>STM32F103</span>
-                    <span>STM32F405</span>
-                    <span>ICM20602</span>
-                    <span>Raspberry Pi 5</span>
-                    <span>Computer Vision</span>
-                    <span>LoRa</span>
-                    <span>Web GCS</span>
-                </div>
-            </article>
-            <div class="card">
-                <span class="project-year">2025</span>
-                <h3>FLOODGUARD</h3>
-                <p><strong>Hệ thống cảnh báo lũ sớm qua LoRa.</strong> Thiết kế hệ thống giám sát công suất thấp, tích hợp mạch in (PCB) tùy chỉnh và đồng bộ hóa dữ liệu lên Cloud.</p>
-            </div>
-            <div class="card">
-                <span class="project-year">2024</span>
-                <h3>Smart Light IoT System</h3>
-                <p>Hệ thống điều khiển ánh sáng IoT sử dụng <strong>ESP32-C3 (ESP-IDF + MQTT)</strong>. Tích hợp điều khiển qua Web, ứng dụng di động và trợ lý ảo bằng giọng nói.</p>
-            </div>
-            <div class="card">
-                <span class="project-year">2024</span>
-                <h3>ESP32-C3 Simple Music Player</h3>
-                <p>Phát triển hệ thống phát âm thanh dựa trên giao tiếp SPI, bao gồm thiết kế và lắp ráp phần cứng tùy chỉnh để xử lý tín hiệu.</p>
-            </div>
-            <div class="card">
-                <span class="project-year">2023</span>
-                <h3>15W OTL Analog Amplifier</h3>
-                <p>Thiết kế và thử nghiệm phần cứng cho bộ khuếch đại tín hiệu analog 15W OTL dựa trên linh kiện rời (Discrete BJT), bao gồm cả thiết kế PCB.</p>
-            </div>
-            <div class="card">
-                <span class="project-year">2023</span>
-                <h3>Mobile Store Management App</h3>
-                <p>Ứng dụng quản lý cửa hàng viết bằng <strong>C++</strong> (Lập trình hướng đối tượng). Chạy trên nền tảng Console, hỗ trợ quản lý hàng tồn kho và đơn hàng.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" style="background: white;">
-        <h2 class="section-title">Liên Hệ Kết Nối</h2>
-        <div style="max-width: 650px; margin: 0 auto; text-align: center; background: var(--light-bg); padding: 3rem; border-radius: 16px; border: 1px solid #e2e8f0;">
-            <i class="fas fa-paper-plane" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1.5rem;"></i>
-            <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-main);">
-                Tôi luôn mở rộng cơ hội hợp tác trong các dự án Công nghệ bền vững, IoT ứng dụng xã hội hoặc trao đổi kỹ thuật về hệ thống nhúng!
-            </p>
-            
-            <a href="https://linktr.ee/levanhieu" target="_blank" class="btn" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 0;">
-                <i class="fas fa-link"></i> Truy cập Linktree của Hiếu
-            </a>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:hieu.lv202@gmail.com" style="color: var(--text-main); text-decoration: none;">hieu.lv202@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+84 355 030 566</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Đà Nẵng, Việt Nam</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/lhieu" target="_blank" style="color: var(--text-main); text-decoration: none;">github.com/lhieu</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="social-links">
-            <a href="https://github.com/lhieu" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/hieulv202" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://facebook.com/hieuxiugeneral" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        </div>
-        <p>&copy; 2026 Lê Văn Hiếu. Phát triển với đam mê công nghệ.</p>
-    </footer>
-
+<a class="sr-only" href="#main">Bỏ qua menu</a>
+<header class="topbar">
+<div class="wrap nav-inner">
+<a aria-label="Lê Văn Hiếu, trang chủ" class="brand" href="index.html"><span class="brand-mark">H.</span><span>HIEU<span class="brand-dot">.</span>DEV</span></a>
+<button aria-controls="primary-menu" aria-expanded="false" aria-label="Mở menu điều hướng" class="menu-button" type="button"><span></span><span></span><span></span></button>
+<nav aria-label="Điều hướng chính" class="primary-nav" id="primary-menu"><a href="#about">Giới thiệu</a><a href="#education">Học vấn</a><a href="#skills">Kỹ năng</a><a href="#featured">UAV</a><a href="#projects">Dự án</a><a class="nav-cta" href="#contact">Liên hệ ↗</a></nav>
+</div>
+</header>
+<main id="main">
+<section aria-labelledby="hero-heading" class="hero cv-hero" id="about">
+<div class="wrap cv-hero-grid">
+<div class="cv-hero-copy">
+<div class="kicker"><span class="kicker-line"></span> Giới thiệu bản thân / About me</div>
+<p class="hero-greeting">Xin chào, tôi là</p>
+<h1 class="cv-name" id="hero-heading">Lê Văn <em>Hiếu</em></h1>
+<p class="cv-headline">Sinh viên Kỹ thuật Điện tử – Viễn thông</p>
+<p class="lead">Tôi yêu thích <strong>hệ thống nhúng, lập trình firmware và thiết kế phần cứng</strong>. Qua các dự án với STM32, ESP32, IoT và UAV, tôi tích lũy kinh nghiệm từ thiết kế, lập trình đến kiểm thử trên thiết bị thực tế.</p>
+<p class="cv-intro-second">Hiện tôi muốn tìm kiếm <strong>cơ hội thực tập trong lĩnh vực Embedded / Firmware / IoT</strong>, nơi tôi có thể học hỏi từ đội ngũ kỹ sư và đóng góp vào các sản phẩm thực tế.</p>
+<div class="cv-facts">
+<span>⌖  Đà Nẵng, Việt Nam</span>
+<span>⌘  C/C++ · STM32 · ESP32 · PCB</span>
+</div>
+<div class="btn-row cv-actions">
+<a class="btn btn-primary" href="#featured">Xem dự án nổi bật <span aria-hidden="true" class="arrow">↗</span></a>
+<a class="btn btn-light" href="mailto:hieu.lv202@gmail.com?subject=Co%20hoi%20thuc%20tap%20Embedded">Liên hệ thực tập <span aria-hidden="true" class="arrow">→</span></a>
+<a class="cv-download" href="data/cv.pdf" download="Le_Van_Hieu_CV.pdf">Tải CV (PDF) ↓</a>
+<a class="cv-online-link" href="cv.html">Xem CV online ↗</a>
+</div>
+</div>
+<aside aria-label="Ảnh đại diện và thông tin học vấn" class="cv-personal-card" id="education">
+<div class="cv-portrait-frame">
+<img alt="Ảnh hồ sơ cá nhân (có thể thay bằng ảnh chân dung thật)" height="228" src="data/profile.jpg" width="228"/>
+<div class="portrait-text"><span>EMBEDDED SYSTEMS</span><span>HARDWARE · FIRMWARE · IOT</span></div>
+</div>
+<div class="cv-profile-body">
+<div class="cv-profile-label">Học vấn / Education</div>
+<h2>Đại học Bách khoa – Đại học Đà Nẵng</h2>
+<p>Kỹ thuật Điện tử – Viễn thông</p>
+<div class="cv-profile-meta"><span>2022 – 2027 (dự kiến)</span><span>GPA chuyên ngành (2 kỳ): <strong>3.25/4.0</strong></span></div>
+<div class="cv-profile-divider"></div>
+<div class="cv-profile-label">Định hướng nghề nghiệp</div>
+<p class="cv-career">Embedded Software · Firmware · IoT</p>
+</div>
+</aside>
+</div>
+</section>
+<div aria-label="Các lĩnh vực quan tâm" class="quick-strip cv-strip"><div class="wrap"><strong>Chuyên môn quan tâm</strong><span>Embedded C/C++</span><span>STM32 / ESP32</span><span>PCB Design</span><span>Wireless IoT</span><span>UAV &amp; Computer Vision (R&amp;D)</span></div></div>
+<section class="section" id="skills">
+<div class="wrap">
+<div class="section-heading"><div class="eyebrow">01 / Technical skills</div><h2>Kỹ năng chuyên môn</h2><p>Các công nghệ và kỹ năng tôi sử dụng trong quá trình học tập và phát triển dự án. Những hạng mục đang nghiên cứu được mô tả rõ để người xem hiểu đúng mức độ kinh nghiệm.</p></div>
+<div class="skills-grid cv-skills">
+<article class="skill-block"><div aria-hidden="true" class="skill-icon">{ }</div><h3>Hệ thống nhúng</h3><p>C/C++, STM32, ESP32, STM32CubeIDE, ESP-IDF; giao tiếp SPI, I²C, UART, cảm biến và gỡ lỗi firmware.</p></article>
+<article class="skill-block"><div aria-hidden="true" class="skill-icon">◈</div><h3>Thiết kế phần cứng</h3><p>Thiết kế nguyên lý và PCB với KiCad, lắp ráp và kiểm thử mạch điện, các khối nguồn và kết nối phần cứng.</p></article>
+<article class="skill-block"><div aria-hidden="true" class="skill-icon">⌁</div><h3>Truyền thông &amp; phần mềm</h3><p>LoRa, Wi-Fi, MQTT, REST API, HTML/CSS/JavaScript, Git/GitHub; xây dựng ứng dụng IoT kết nối thiết bị.</p></article>
+<article class="skill-block"><div aria-hidden="true" class="skill-icon">↗</div><h3>Điều khiển &amp; R&amp;D</h3><p>Tích hợp IMU và điều khiển bay UAV; đang mở rộng sang Raspberry Pi 5, xử lý ảnh và hạ cánh thông minh.</p></article>
+</div>
+</div>
+</section><section class="section" id="featured">
+<div class="wrap">
+<div class="section-heading"><div class="eyebrow">02 / Featured project</div><h2>Dự án nổi bật – UAV tự phát triển</h2><p>Dự án kỹ thuật quy mô lớn nhất trong portfolio: từ firmware thời gian thực và kiểm thử bay đến AI nhận diện bãi đáp. Các kết quả đều đi kèm mức độ kiểm chứng.</p></div>
+<article aria-label="Tóm tắt dự án UAV" class="feature">
+<div class="feature-info">
+<span class="status-pill complete">✓ Đã kiểm chứng trên UAV thật</span>
+<h3>Custom UAV Flight Controller &amp; Precision Landing</h3>
+<p>Tự phát triển firmware điều khiển UAV từ STM32F103 đến STM32F405. Hệ thống hiện có vòng điều khiển <strong>400 Hz</strong>, Stabilize, AltHold, thu thập GPS/la bàn và logging. Các chức năng Position Hold, thị giác và hạ cánh tự động được phát triển theo từng mức kiểm chứng.</p>
+<div class="feature-result"><strong>Kết quả mới · flight log test_096</strong><span>AltHold được kích hoạt liên tục khoảng <b>109 giây</b> trong ~147,9 giây log; độ cao tối đa ước lượng <b>6,74 m</b>, GPS 3D fix và heading trusted 97,4% mẫu POS. Đây là kết quả từ log, <em>chưa phải chứng nhận giữ độ cao chính xác</em>. Trước đó, STM32F103 + ICM20602 đã bay ổn định qua Mini6C/MC7RE.</span></div>
+<div class="chips"><span>STM32F405 · 400 Hz</span><span>ICM20602</span><span>BMP388 · AltHold</span><span>GPS / Compass</span><span>Pi 5</span><span>YOLOv8n baseline</span></div>
+<a class="btn btn-primary" href="uav.html">Xem kiến trúc, số liệu và tiến độ <span aria-hidden="true" class="arrow">↗</span></a>
+<p class="feature-disclosure">test_096: Position Hold vẫn SHD=1 / ACT=0. Tỷ lệ heading trust cao nhưng có đoạn gián đoạn; Web GCS vẫn mô phỏng, LoRa/autoland chưa điều khiển UAV thật.</p>
+</div>
+<div class="feature-side">
+<div class="feature-side-core">
+<div class="side-heading">Project highlight / R&amp;D 2026</div>
+<figure class="home-uav-photo"><img alt="UAV quadcopter và các thiết bị điện tử đang được lắp đặt tại bàn thực nghiệm" loading="lazy" src="data/uav-photo.jpg"/><figcaption>Ảnh UAV thật từ báo cáo PBL5 (2026)</figcaption></figure>
+<div class="side-title">Từ flight controller đến nhận diện bãi đáp</div>
+<div id="home-stages"><div class="track-step"><b>Đang tải tiến độ...</b></div></div>
+</div>
+<div class="feature-caption">Mốc cập nhật hồ sơ: <span data-last-updated="">14/10/2026</span> · Chỉ công bố tính năng đã có bằng chứng.</div>
+</div>
+</article>
+</div>
+</section>
+<section class="section white" id="projects">
+<div class="wrap">
+<div class="section-heading"><div class="eyebrow">03 / Other projects</div><h2>Các dự án khác</h2><p>Mỗi dự án có một trang riêng để bạn xem tổng quan. Tôi sẽ tiếp tục bổ sung ảnh, sơ đồ, mã nguồn và kết quả kiểm thử cho từng dự án.</p></div>
+<div class="card-grid cv-project-grid"><article class="project-tile"><a aria-label="Xem trang dự án FLOODGUARD" class="project-tile-link" href="projects/floodguard.html"><div class="project-tile-icon aqua">FG</div><span class="card-year">2025 / IOT · TELEMETRY</span><h3>FLOODGUARD</h3><p>Hệ thống cảnh báo lũ sớm qua LoRa, với mạch PCB tự thiết kế và định hướng đồng bộ dữ liệu lên Cloud.</p><div class="project-taglist"><span>LoRa</span><span>PCB</span><span>IoT</span></div><span class="project-tile-action">Xem trang dự án ↗</span></a></article><article class="project-tile"><a aria-label="Xem trang dự án Smart Light IoT System" class="project-tile-link" href="projects/smart-light.html"><div class="project-tile-icon indigo">SL</div><span class="card-year">2024 / IOT · CONNECTED DEVICES</span><h3>Smart Light IoT System</h3><p>Hệ thống điều khiển chiếu sáng với ESP32-C3, ESP-IDF, MQTT; điều khiển qua Web, điện thoại và trợ lý giọng nói.</p><div class="project-taglist"><span>ESP32-C3</span><span>MQTT</span><span>Web</span></div><span class="project-tile-action">Xem trang dự án ↗</span></a></article><article class="project-tile"><a aria-label="Xem trang dự án ESP32-C3 Music Player" class="project-tile-link" href="projects/music-player.html"><div class="project-tile-icon violet">MP</div><span class="card-year">2024 / EMBEDDED · AUDIO</span><h3>ESP32-C3 Music Player</h3><p>Hệ thống phát âm thanh sử dụng ESP32-C3 và giao tiếp SPI, kết hợp lập trình với thiết kế phần cứng tùy chỉnh.</p><div class="project-taglist"><span>ESP32-C3</span><span>SPI</span><span>C/C++</span></div><span class="project-tile-action">Xem trang dự án ↗</span></a></article><article class="project-tile"><a aria-label="Xem trang dự án 15W OTL Analog Amplifier" class="project-tile-link" href="projects/analog-amplifier.html"><div class="project-tile-icon orange">15W</div><span class="card-year">2023 / ELECTRONICS · ANALOG</span><h3>15W OTL Analog Amplifier</h3><p>Thiết kế, lắp ráp và thử nghiệm bộ khuếch đại analog 15W OTL với transistor BJT rời, kết hợp thiết kế PCB.</p><div class="project-taglist"><span>Analog</span><span>BJT</span><span>PCB</span></div><span class="project-tile-action">Xem trang dự án ↗</span></a></article><article class="project-tile"><a aria-label="Xem trang dự án Mobile Store Management" class="project-tile-link" href="projects/mobile-store.html"><div class="project-tile-icon slate">C++</div><span class="card-year">2023 / SOFTWARE · C++</span><h3>Mobile Store Management</h3><p>Ứng dụng Console quản lý cửa hàng viết bằng C++ hướng đối tượng, hỗ trợ quản lý hàng tồn kho và đơn hàng.</p><div class="project-taglist"><span>C++</span><span>OOP</span><span>Console</span></div><span class="project-tile-action">Xem trang dự án ↗</span></a></article></div>
+</div>
+</section>
+<section class="contact-section" id="contact"><div class="wrap contact-grid">
+<div><div class="kicker"><span class="kicker-line"></span> Let's connect</div><h2>Kết nối về cơ hội thực tập &amp; việc làm</h2><p>Tôi mong muốn tìm hiểu thêm về các cơ hội Embedded/Firmware/IoT và sẵn sàng trao đổi về dự án, kỹ năng cũng như quá trình học tập của mình.</p><div class="contact-direct"><a href="mailto:hieu.lv202@gmail.com">✉ hieu.lv202@gmail.com</a><a href="tel:+84355030566">☎ 0355 030 566</a><a href="https://linkedin.com/in/hieulv" rel="noopener noreferrer" target="_blank">LinkedIn ↗</a></div></div>
+<div class="contact-actions"><a class="btn btn-primary" href="mailto:hieu.lv202@gmail.com">Gửi email ↗</a><a class="btn btn-navy-outline" href="https://github.com/lhieu" rel="noopener noreferrer" target="_blank">GitHub ↗</a></div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap"><span>© 2026 Lê Văn Hiếu · Engineering portfolio</span><span><a href="mailto:hieu.lv202@gmail.com">Email</a> · <a href="https://linkedin.com/in/hieulv" rel="noopener noreferrer" target="_blank">LinkedIn</a> · <a href="https://linktr.ee/levanhieu" rel="noopener noreferrer" target="_blank">Linktree</a></span></div></footer>
 </body>
 </html>

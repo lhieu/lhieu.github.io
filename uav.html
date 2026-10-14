@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hồ sơ dự án UAV của Lê Văn Hiếu: STM32F405, flight control 400 Hz, test_096 với ~109 giây AltHold, GPS/heading shadow, YOLOv8n, Raspberry Pi 5 và Web GCS.">
+  <meta name="theme-color" content="#10243d">
+  <title>UAV Flight Control &amp; Precision Landing | Lê Văn Hiếu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data/favicon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/uav-progress.js" defer></script>
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="sr-only" href="#main">Bỏ qua menu</a>
+  <header class="topbar">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="Lê Văn Hiếu, trang chủ"><span class="brand-mark">H.</span><span>HIEU<span class="brand-dot">.</span>DEV</span></a>
+      <button class="menu-button" type="button" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="primary-menu"><span></span><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-menu" aria-label="Điều hướng chính">
+        <a href="index.html#about">Về tôi</a>
+        <a href="#overview">Tổng quan</a>
+        <a href="#evidence">Thử nghiệm</a>
+        <a href="#vision">Nhận diện</a>
+        <a href="#roadmap">Tiến độ</a>
+        <a class="nav-cta" href="index.html#contact">Liên hệ ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="case-hero case-hero-v4">
+      <div class="wrap">
+        <nav class="breadcrumb" aria-label="Đường dẫn"><a href="index.html">Portfolio</a><span aria-hidden="true">/</span><span>UAV Research &amp; Development</span></nav>
+        <div class="case-grid">
+          <div>
+            <div class="kicker"><span class="kicker-line"></span> Featured project · Embedded / Robotics / AI</div>
+            <h1>Tự phát triển UAV: từ <em>flight controller</em> đến nhận diện bãi đáp</h1>
+            <p class="lead">Thiết kế và lập trình bộ điều khiển bay cho quadcopter, nâng cấp từ <strong>STM32F103 lên STM32F405</strong>, kết hợp xử lý ảnh để hướng tới hạ cánh chính xác. Từng tính năng được kiểm thử theo lộ trình <strong>firmware → đo đạc → shadow → bay thật</strong>.</p>
+            <div class="case-inline-status"><span class="dark-signal"><i></i> test_096: AltHold kích hoạt ~109 giây</span><span class="dark-signal subdued">Position Hold vẫn shadow · chưa autoland</span></div>
+            <div class="btn-row"><a class="btn btn-primary" href="#evidence">Xem kết quả bay ↓</a><a class="btn btn-navy-outline" href="#roadmap">Xem toàn bộ tiến độ →</a></div>
+          </div>
+          <figure class="case-photo-frame">
+            <img src="data/uav-photo.jpg" width="1300" height="975" alt="Ảnh UAV quadcopter thực tế đang lắp ráp và tích hợp các module điện tử, Raspberry Pi và bộ điều khiển bay" fetchpriority="high">
+            <figcaption><span class="photo-corner">UAV / Hardware prototype</span><span>Ảnh thực tế từ báo cáo tiến độ PBL5 · 2026</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="achievement-strip" aria-label="Những con số có minh chứng từ dự án"><div class="wrap achievement-grid">
+      <div><strong>400 <span>Hz</span></strong><small>Chu kỳ vòng điều khiển ~2,5 ms</small></div>
+      <div><strong>109,0 <span>s</span></strong><small>AltHold được kích hoạt · test_096</small></div>
+      <div><strong>6,74 <span>m</span></strong><small>Độ cao tối đa ước lượng</small></div>
+      <div><strong>97,4<span>%</span></strong><small>Heading trusted · bản ghi POS*</small></div>
+    </div></section>
+
+    <div class="inpage-nav"><div class="wrap inpage-links" aria-label="Nội dung hồ sơ kỹ thuật">
+      <a href="#overview">01 Tổng quan</a><a href="#evidence">02 Bay &amp; Firmware</a><a href="#architecture">03 Kiến trúc</a><a href="#vision">04 Computer Vision</a><a href="#groundstation">05 Web &amp; LoRa</a><a href="#autoland">06 Hạ cánh</a><a href="#roadmap">07 Tiến độ</a><a href="#updates">08 Nhật ký</a>
+    </div></div>
+
+    <section class="section" id="overview"><div class="wrap">
+      <div class="section-heading"><div class="eyebrow">01 / Overview</div><h2>Không chỉ lắp ráp — tôi đang xây dựng cả hệ thống điều khiển</h2><p>Mục tiêu dài hạn là UAV có thể phát hiện bãi đáp và tiếp cận an toàn. Trong phạm vi đã thực hiện, trọng tâm là xây dựng nền tảng bay đáng tin cậy và chuẩn bị các giao diện cho tính năng tự động.</p></div>
+      <div class="explain-grid">
+        <article class="explain-card overview-panel"><div class="small-cap">Tôi trực tiếp đảm nhiệm</div><h3>Hardware · Firmware · Tích hợp · AI baseline</h3><ul>
+          <li>Tự phát triển firmware STM32, từ xử lý IMU/RC đến PID, mixer và PWM điều khiển ESC.</li>
+          <li>Tích hợp BMP388, GPS u-blox M10, QMC5883L; ghi và phân tích log bay.</li>
+          <li>Thiết kế giao thức UART giữa Raspberry Pi 5 và flight controller có CRC, timeout và quyền ưu tiên RC.</li>
+          <li>Chuẩn bị dữ liệu và huấn luyện mô hình YOLOv8n cho nhận diện bãi đáp.</li>
+        </ul></article>
+        <article class="explain-card overview-panel"><div class="small-cap">Cách tôi xác minh tiến độ</div><h3>Phân biệt kết quả thật và mục tiêu nghiên cứu</h3><div class="status-explain"><span class="status-pill complete">Đã kiểm chứng</span><p>Firmware và các tính năng đã hoạt động trên UAV, hoặc kết quả có log/nguồn kiểm tra tương ứng.</p></div><div class="status-explain"><span class="status-pill shadow">Shadow / kiểm thử</span><p>Hệ thống tính toán, truyền dữ liệu hoặc mô phỏng; chưa trao quyền điều khiển động cơ.</p></div><div class="status-explain"><span class="status-pill planned">Kế hoạch</span><p>Mô hình tự phát triển, AprilTag hybrid, LoRa RF và autoland chưa được xác minh ngoài thực tế.</p></div></article>
+      </div>
+      <p class="report-attribution">Nguồn: báo cáo PBL5 (các thử nghiệm trước) và log <code>test_096.log</code> mới nhất do tác giả cung cấp. Biểu đồ test_096 được dựng lại từ log; thời gian là ước lượng dựa trên tần suất bản ghi, không phải đồng hồ thời gian tuyệt đối. Không công bố tọa độ GPS gốc.</p>
+    </div></section>
+
+        <section class="section white" id="evidence"><div class="wrap">
+      <div class="section-heading"><div class="eyebrow">02 / Flight testing &amp; embedded firmware</div><h2>Kết quả mới nhất: <code>test_096</code> trên STM32F405</h2><p>Nền tảng F103 + ICM20602 trước đó đã bay bằng tay điều khiển Mini6C/MC7RE. Bản STM32F405 tiếp tục ghi nhận hoạt động của vòng điều khiển 400 Hz, Stabilize và AltHold trên UAV thật. Mốc mới cho thấy <strong>AltHold được kích hoạt liên tục trong khoảng 109 giây</strong>, không phải phép đo sai số giữ độ cao.</p></div>
+      <div class="flight-proof-grid">
+        <div class="proof-main">
+          <div class="proof-banner"><span class="status-pill complete">✓ Bằng chứng từ flight log</span><h3>STM32F405RGT6 · 168 MHz · 400 Hz</h3><p>Superloop bare-metal, cảm biến ICM20602/BMP388, PID, mixer Quad-X và PWM ESC. Trong <code>test_096</code>, trường <code>DT</code> nằm trong khoảng 2494–2505 µs (xấp xỉ chu kỳ 2,5 ms).</p></div>
+          <div class="data-mini-grid">
+            <div><b>109,0 s</b><small>AH=1 liên tục · 5.452 mẫu</small></div>
+            <div><b>6,74 m</b><small>Độ cao lớn nhất từ ALT100</small></div>
+            <div><b>147,9 s</b><small>7.394 bản ghi A, giả định log 50 Hz</small></div>
+            <div><b>0</b><small>FS=1 / O=1 trong 7.394 bản ghi</small></div>
+          </div>
+          <p class="metric-caveat">Những số liệu này là <strong>thời gian/độ cao trong log</strong>; không phải phép đo độ chính xác AltHold theo setpoint, không khẳng định bay tự động hoặc độ bền pin. Độ cao có dao động và thay đổi đáng kể, nhất là cuối bài thử.</p>
+        </div>
+        <figure class="technical-figure photo-figure"><img src="data/uav-test096.png" width="1567" height="844" loading="lazy" alt="test_096: độ cao tương đối theo thời gian và vùng AltHold được kích hoạt từ giây 34,46 đến 143,48"><figcaption><b>test_096 · Altitude &amp; AltHold</b> — biểu đồ mới từ log: AltHold bật từ ~34,46 đến ~143,48 giây; độ cao tối đa ước lượng 6,74 m. Không có setpoint để tính sai số giữ độ cao.</figcaption></figure>
+      </div>
+      <div class="two-feature-panels">
+        <article class="tech-info-panel"><div class="small-cap">Firmware / safety</div><h3>Nhịp điều khiển và trạng thái vận hành</h3><p>Vòng 400 Hz được thể hiện qua <code>DT≈2500 µs</code>. Trong log mới, tất cả bản ghi trạng thái có <code>FS=0</code>, <code>O=0</code>, <code>BOK=1</code>, <code>MOK=1</code>. Đây chỉ là bằng chứng trong một phiên ghi log; vẫn cần watchdog độc lập, low-battery failsafe và các phép thử lặp lại.</p></article>
+        <article class="tech-info-panel"><div class="small-cap">Navigation / shadow</div><h3>GPS 3D fix, heading trust tốt hơn trong phiên ghi mới</h3><p><strong>739/739</strong> bản ghi NAV có <code>FIX=3, FOK=1</code>; <strong>16–25</strong> vệ tinh; receiver hAcc khoảng <strong>0,492–0,818 m</strong> (không phải sai số ground-truth). Heading trusted <strong>1.440/1.478</strong> mẫu POS (97,4%) nhưng vẫn có một khoảng mất trust ~3 giây. Position Hold luôn <code>SHD=1, ALW=0, ACT=0</code>, chưa tác động motor.</p></article>
+      </div>
+      <figure class="technical-figure new-plot-figure"><img src="data/uav-test096-navigation.png" width="1925" height="1007" loading="lazy" alt="Biểu đồ GPS test_096: receiver hAcc, số vệ tinh và các khoảng heading trust bằng 0"><figcaption><b>test_096 · Navigation diagnostics</b> — receiver hAcc (ước lượng của GPS), số vệ tinh và khoảng heading trust tạm mất. Không đưa tọa độ GPS thật lên website.</figcaption></figure>
+      <div class="case-comparison">
+        <div class="case-comparison-head"><div><div class="small-cap">Flight log comparison</div><h3>Đối chiếu hai mốc thử nghiệm</h3></div><p>Các bài thử không cùng điều kiện. So sánh này chỉ mô tả bản ghi, không phải chứng nhận chất lượng điều khiển.</p></div>
+        <p class="case-table-hint">Trên điện thoại, vuốt bảng sang ngang để xem đầy đủ ba cột.</p><div class="case-table-scroll"><table class="case-table"><thead><tr><th>Chỉ số</th><th>test_092 · báo cáo PBL5</th><th>test_096 · log mới</th></tr></thead><tbody>
+        <tr><td>Thời lượng log ước tính</td><td>~30,6 s</td><td>~147,9 s</td></tr>
+        <tr><td>AltHold được kích hoạt</td><td>325 mẫu · ~6,5 s</td><td>5.452 mẫu · ~109,0 s, liên tục</td></tr>
+        <tr><td>Độ cao tối đa ước lượng</td><td>5,93 m</td><td>6,74 m</td></tr>
+        <tr><td>Heading trusted (POS)</td><td>203/306 · 66,3%</td><td>1.440/1.478 · 97,4%</td></tr>
+        <tr><td>GPS và hAcc của receiver</td><td>25–29 SV; 0,232–0,320 m</td><td>16–25 SV; 0,492–0,818 m</td></tr>
+        <tr><td>Position Hold</td><td>Shadow, chưa điều khiển motor</td><td>Shadow, chưa điều khiển motor</td></tr>
+        </tbody></table></div>
+        <p class="metric-caveat">Dù tỷ lệ heading trusted cao hơn trong <code>test_096</code>, vẫn có khoảng mất trust; receiver hAcc trong lần này <strong>lớn hơn</strong> lần trước. Không kết luận GPS chính xác hơn hay PosHold đã đủ an toàn để bật live.</p>
+      </div>
+      <details class="source-details"><summary>Những điểm kỹ thuật còn cần xác minh sau test_096</summary><div class="review-notes"><ul>
+        <li>Log không có altitude setpoint: chưa tính được độ lệch so với mục tiêu, sai số RMS hay thời gian ổn định của AltHold.</li>
+        <li>Heading trust tạm mất khoảng giây 120,7–123,7; cần điều tra trước khi mở Position Hold điều khiển thật.</li>
+        <li>Bộ đếm <code>I2CE</code> thay đổi từ 2 lên 4; <code>GOVR</code> luôn bằng 1 trong log, cần đối chiếu với firmware để phân biệt lỗi cũ và lỗi mới.</li>
+        <li>Các bản ghi POS vẫn <code>SHD=1, ACT=0</code>; CMP có <code>LIVE=0</code>. Chưa có bằng chứng UAV tự giữ vị trí hay nhận lệnh điều khiển từ Raspberry Pi 5/LoRa trong chuyến bay này.</li>
+      </ul></div></details>
+      <details class="source-details"><summary>Xem lại minh chứng cũ: đồ thị test_092</summary><figure><img src="data/uav-test092.png" width="1300" height="796" loading="lazy" alt="Biểu đồ từ log test_092 với 6,5 giây AltHold trong báo cáo PBL5"><figcaption>Bằng chứng lịch sử trước test_096, giữ nguyên để theo dõi quá trình phát triển.</figcaption></figure></details>
+      <details class="source-details"><summary>Xem sơ đồ điều khiển bay và các cổng an toàn</summary><figure><img src="data/uav-flight-control.png" width="1300" height="731" loading="lazy" alt="Sơ đồ điều khiển RC, interlock, PID, mixer và ESC"><figcaption>Sơ đồ firmware từ báo cáo PBL5.</figcaption></figure></details>
+    </div></section>
+
+    <section class="section" id="architecture"><div class="wrap">
+      <div class="section-heading"><div class="eyebrow">03 / System architecture</div><h2>Phân tách điều khiển thời gian thực và xử lý ảnh</h2><p>STM32F405 luôn chịu trách nhiệm motor và an toàn bay; Raspberry Pi 5 xử lý dữ liệu cấp cao. Các lệnh từ companion phải vượt qua kiểm tra chế độ, timeout và quyền can thiệp của RC.</p></div>
+      <figure class="technical-figure architecture-figure"><img src="data/uav-system.png" width="1300" height="699" loading="lazy" alt="Sơ đồ hai tầng UAV với Raspberry Pi 5 xử lý thị giác và STM32F405 điều khiển thời gian thực, web LoRa là kiến trúc dự kiến"><figcaption><b>Kiến trúc hai tầng</b> — hình trong báo cáo PBL5. Mũi tên biểu diễn phân chia trách nhiệm/thiết kế tích hợp, không ngụ ý mọi đường truyền đã vận hành thực tế.</figcaption></figure>
+      <div class="responsibility-grid">
+        <article class="responsibility-card"><div class="small-cap">Flight controller · live</div><h3>STM32F405</h3><p>Đọc ICM20602, BMP388, GPS và la bàn; thực hiện estimator, PID, mixer, PWM, failsafe và đọc RC.</p><span class="status-pill complete">Vòng điều khiển và AltHold đã chạy</span></article>
+        <article class="responsibility-card"><div class="small-cap">Companion computer · đang tích hợp</div><h3>Raspberry Pi 5 (8 GB)</h3><p>Đã được lắp trên UAV. Giao thức UART có CRC16, sequence và timeout; telemetry live khoảng 50 Hz nhưng setpoint từ Pi chưa được phép điều khiển động cơ.</p><span class="status-pill shadow">Telemetry live · control shadow</span></article>
+      </div>
+    </div></section>
+
+    <section class="section white" id="vision"><div class="wrap">
+      <div class="section-heading"><div class="eyebrow">04 / Computer Vision</div><h2>Nhận diện bãi đáp: baseline đã huấn luyện, mô hình riêng đang thiết kế</h2><p>Nhánh thị giác được phát triển theo hai bước: xây dựng mốc tham chiếu bằng YOLOv8n, sau đó nghiên cứu LandingPadNet gọn nhẹ để triển khai trên Raspberry Pi 5.</p></div>
+      <div class="vision-stat-row">
+        <div class="vision-stat"><div>1.319 / 375 / 188</div><small>Train / validation / test (ảnh)</small></div>
+        <div class="vision-stat"><div>110 epochs</div><small>3 chặng: 50 + 30 + 30</small></div>
+        <div class="vision-stat"><div>0,9916</div><small>mAP@0.5 tốt nhất trong train-3</small></div>
+        <div class="vision-stat"><div>0,9895</div><small>mAP@0.5:0.95 tốt nhất trong train-3</small></div>
+      </div>
+      <div class="caveat-callout"><strong>Giới hạn quan trọng:</strong> tập validation còn nhiều khung hình cùng bãi đáp và bối cảnh trong nhà tương đồng. Metric cao <strong>không đồng nghĩa</strong> với việc nhận diện ngoài trời, trên Pi 5 hay hạ cánh tự động đã được kiểm chứng.</div>
+      <div class="ai-gallery">
+        <figure class="technical-figure"><img src="data/uav-yolo-predictions.png" width="1038" height="1038" loading="lazy" alt="Ảnh dự đoán nhận diện landing_pad của YOLOv8n trên tập validation trong nhà"><figcaption><b>YOLOv8n / validation</b> — ảnh dự đoán từ báo cáo, chủ yếu có bối cảnh tương đồng.</figcaption></figure>
+        <figure class="technical-figure"><img src="data/uav-yolo-training.png" width="1300" height="650" loading="lazy" alt="Các đường cong loss và precision, recall, mAP trong lần huấn luyện thứ ba"><figcaption><b>Training curves</b> — loss và các metric trong chặng huấn luyện thứ ba.</figcaption></figure>
+      </div>
+      <div class="proposal-panel">
+        <div><div class="small-cap">Research proposal · chưa triển khai</div><h3>LandingPadNet</h3><p>Mô hình được đặc tả với backbone nhẹ, Light FPN P2–P5 (P2 stride 4 cho vật thể nhỏ) và anchor-free head dự đoán vùng bãi đáp, tâm và độ tin cậy. <strong>Chưa được lập trình, huấn luyện hay benchmark trên Raspberry Pi 5.</strong></p><p>Đầu ra cần kiểm thử tiếp: độ chính xác tâm, FPS/latency, motion blur, thay đổi ánh sáng và dữ liệu ngoài miền.</p></div>
+        <figure><img src="data/uav-landingpadnet.png" width="1300" height="683" loading="lazy" alt="Sơ đồ LandingPadNet mục tiêu bao gồm backbone, FPN và đầu dự đoán anchor-free"><figcaption>Thiết kế mục tiêu của LandingPadNet, không phải mạng đã huấn luyện.</figcaption></figure>
+      </div>
+    </div></section>
+
+    <section class="section" id="groundstation"><div class="wrap">
+      <div class="section-heading"><div class="eyebrow">05 / Ground Control Station</div><h2>Web điều hành nhiệm vụ: hiện đang chạy mô phỏng</h2><p>Giao diện hỗ trợ theo dõi các thông số chuyến bay và thiết lập nhiệm vụ. Phần hiển thị và mô phỏng đã có; mạng truyền LoRa và dữ liệu thật từ flight controller chưa được tích hợp toàn tuyến.</p></div>
+      <div class="gcs-layout">
+        <figure class="technical-figure gcs-figure"><div class="image-status-label">DEMO / SIMULATED DATA</div><img src="data/uav-web-gcs.png" width="1334" height="1310" loading="lazy" alt="Giao diện web quản lý hành trình UAV, bản đồ nền, trạng thái bay và bảng cấu hình nhiệm vụ ở chế độ mô phỏng"><figcaption><b>Web GCS hiện có</b> — mô phỏng waypoint, thông số bay và tiến trình nhiệm vụ; chưa kết nối chuyến bay thật.</figcaption></figure>
+        <div class="gcs-notes">
+          <div class="status-pill simulated">Đã xây dựng bản mô phỏng</div>
+          <h3>Những phần đã làm</h3>
+          <ul><li>Bản đồ nhiệm vụ, tọa độ đích và các tham số độ cao/tốc độ.</li><li>Khối độ cao, tốc độ mặt đất, vận tốc đứng, pin và trạng thái GPS.</li><li>Luồng trạng thái mô phỏng: cất cánh → di chuyển → hạ cánh → hoàn tất.</li></ul>
+          <div class="divider-soft"></div>
+          <div class="status-pill planned">LoRa: chưa kiểm thử RF</div>
+          <h3>Phần cần tích hợp</h3>
+          <p>Đường truyền Web ↔ STM32/LoRa ↔ Pi 5/FC; kiểm tra mất gói, độ trễ, khả năng fallback và bảo đảm lệnh từ Web không vượt quyền điều khiển an toàn của flight controller.</p>
+        </div>
+      </div>
+    </div></section>
+
+    <section class="section white" id="autoland"><div class="wrap">
+      <div class="section-heading"><div class="eyebrow">06 / Next milestone · Precision landing</div><h2>Hướng tới hạ cánh tự động với YOLO và AprilTag</h2><p>Đã có thiết kế bãi đáp với chữ H và 5 AprilTag. Chuỗi căn tâm, chuyển sang AprilTag và hạ thấp là chiến lược đề xuất, <strong>chưa được thử nghiệm hạ cánh trên UAV</strong>.</p></div>
+      <div class="landing-layout">
+        <figure class="technical-figure pad-figure"><img src="data/uav-landing-pad.png" width="1000" height="1000" loading="lazy" alt="Bản thiết kế bãi đáp màu cam với chữ H trắng, 5 AprilTag và các hướng Bắc Đông Nam Tây"><figcaption><b>Thiết kế bãi đáp</b> — 1 tag tâm, 4 tag xung quanh, ký hiệu N–E–S–W. Kích thước thực và hiệu chuẩn camera cần xác nhận.</figcaption></figure>
+        <div class="landing-flow"><div class="landing-step"><span>01</span><div><h3>Tiếp cận</h3><p>GPS và heading phục vụ định hướng tổng thể sau khi kiểm tra điều kiện an toàn.</p></div></div><div class="landing-step"><span>02</span><div><h3>Tìm và căn tâm thô</h3><p>YOLOv8/LandingPadNet phát hiện vùng bãi đáp từ góc camera hướng xuống.</p></div></div><div class="landing-step"><span>03</span><div><h3>Chuyển sang AprilTag</h3><p>Ước lượng tương đối bằng tag khi đủ kích thước ảnh và chất lượng quan sát.</p></div></div><div class="landing-step"><span>04</span><div><h3>Hạ thấp có giám sát</h3><p>Giữ RC override, kiểm soát lỗi cảm biến, timeout và chỉ disarm khi đủ điều kiện.</p></div></div></div>
+      </div>
+      <details class="source-details"><summary>Xem state machine hạ cánh chính xác dự kiến</summary><figure><img src="data/uav-autoland-flow.png" width="1300" height="731" loading="lazy" alt="Sơ đồ trạng thái hạ cánh từ manual qua tìm bãi đáp, căn chỉnh, AprilTag, hạ thấp và chạm đất"><figcaption>State machine trong báo cáo PBL5, hiện ở mức thiết kế, chưa triển khai hạ cánh tự động trên UAV.</figcaption></figure></details>
+    </div></section>
+
+    <section class="section" id="roadmap"><div class="wrap">
+      <div class="section-heading"><div class="eyebrow">07 / Development status</div><h2>Tiến độ từng phân hệ</h2><p>Không dùng một con số hoàn thành chung: mỗi hạng mục có trạng thái riêng, có thể cập nhật ngay sau khi xuất hiện kết quả và bằng chứng mới.</p></div>
+      <div class="status-legend"><span class="status-pill complete">Đã kiểm chứng</span><span class="status-pill progress">Đã chạy · cần tối ưu</span><span class="status-pill shadow">Shadow</span><span class="status-pill baseline">Baseline nội bộ</span><span class="status-pill simulated">Mô phỏng</span><span class="status-pill planned">Kế hoạch</span></div>
+      <div id="uav-stages" class="phase-grid phase-grid-v4" aria-live="polite"><noscript><p>Hãy bật JavaScript để xem chi tiết các phân hệ từ dữ liệu tiến độ.</p></noscript></div>
+    </div></section>
+
+    <section class="section white" id="updates"><div class="wrap">
+      <div class="section-heading"><div class="eyebrow">08 / Development updates</div><h2>Nhật ký và minh chứng bổ sung</h2><p>Phần tiến độ được đọc từ một file JavaScript riêng. Các mốc tiếp theo sẽ được bổ sung khi có kiểm thử và hình ảnh thật.</p></div>
+      <div class="log-grid"><aside class="log-aside"><strong>Nguồn minh chứng hiện tại</strong><p>Báo cáo PBL5 (test_092, kiến trúc, ảnh thiết bị) và <code>test_096.log</code> (7.394 bản ghi A, 739 NAV, 1.478 POS). Hai biểu đồ test_096 được dựng từ các trường đã ẩn tọa độ.</p><p>Còn cần kiểm chứng: AltHold theo setpoint; heading trust ngắt quãng; Position Hold shadow; thử nghiệm LoRa, benchmark Pi 5 và autoland. Tọa độ GPS thô không được công bố trên website.</p><p style="font-size:.8rem;margin:0;color:#59748f">Ngày cập nhật hồ sơ: <strong data-last-updated>14/10/2026</strong></p></aside><div id="uav-updates" class="log-list" aria-live="polite"><noscript><p>Hãy bật JavaScript để xem nhật ký.</p></noscript></div></div>
+      <div class="future-gallery-head"><h3>Ảnh và video sẽ bổ sung theo các lần thử tiếp theo</h3><p>Thư viện này để thêm tư liệu mới mà không cần sửa cấu trúc HTML.</p></div>
+      <div class="evidence-placeholder" id="media-empty"><div class="placeholder-mark" aria-hidden="true">▣</div><b>Đang chờ ảnh/video bổ sung ngoài báo cáo</b><p>Ảnh và đồ thị từ báo cáo đã xuất hiện ở các phần phía trên. Video bay và thử nghiệm mới sẽ được thêm vào đây khi có bản gốc.</p></div>
+      <div id="evidence-gallery" class="media-grid" aria-label="Tư liệu UAV bổ sung"></div>
+    </div></section>
+
+    <section class="case-cta"><div class="wrap"><div><h2>Xem các dự án khác và thông tin ứng tuyển</h2><p>Từ trang chủ có thể xem giới thiệu bản thân, kỹ năng, các dự án Embedded/IoT và CV trực tuyến.</p></div><a class="btn btn-primary" href="index.html">Về portfolio ↗</a></div></section>
+  </main>
+  <footer class="footer"><div class="wrap"><span>© 2026 Lê Văn Hiếu · UAV technical case study</span><span><a href="index.html">Portfolio</a> · <a href="data/cv.pdf" download="Le_Van_Hieu_CV.pdf">CV (PDF)</a> · <a href="mailto:hieu.lv202@gmail.com">Email</a></span></div></footer>
+</body>
+</html>
