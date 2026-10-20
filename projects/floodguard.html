@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0d233a">
-  <meta name="description" content="Dự án thiết bị giám sát mực nước từ xa sử dụng RAK3172, LoRaWAN OTAA, cấu hình chu kỳ qua downlink, chế độ ngủ tiết kiệm năng lượng và PCB thiết kế, lắp ráp thực tế.">
-  <title>LoRaWAN Water Level Monitoring | Dự án của Lê Văn Hiếu</title>
+  <meta name="description" content="FLOODGUARD – hệ thống cảnh báo ngập lụt sớm cho khuôn viên trường dùng RAK3172 và LoRaWAN. Giải Nhì Smart Campus Campaign Competition 2025, ISSCEI 2025. Thiết kế PCB, phần cứng thực tế, cấu hình từ xa.">
+  <title>FLOODGUARD | Hệ thống giám sát & cảnh báo ngập lụt LoRaWAN | Lê Văn Hiếu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -44,6 +44,26 @@
     .video-box{margin-top:20px;background:white;border:1px solid var(--line);border-radius:15px;overflow:hidden}.video-box video{display:block;width:100%;max-height:600px;background:#071c30}.video-box p{padding:9px 18px 15px;color:#6b7f91;font-size:12px}
     .file-list{font:600 12px/2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#43617a;background:#f0f6fa;padding:16px;border-radius:10px;overflow-wrap:anywhere}.file-list div{padding:2px 0}.file-list span{color:#8199aa}
     .case-cta{background:#102940;color:#fff;padding:50px 0}.cta-inner{display:flex;justify-content:space-between;align-items:center;gap:25px}.case-cta h2{font-size:25px;letter-spacing:-.03em;margin-bottom:7px}.case-cta p{font-size:12px;color:#b9cde0}.footer{background:#0a1e32;padding:26px 0;color:#aac0cf;font-size:12px}.footer-inner{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}.footer a:hover{color:white}
+
+    /* FLOODGUARD portfolio enhancements */
+    .prize-pill{display:inline-flex;align-items:center;gap:7px;margin:0 0 15px;padding:7px 13px;border:1px solid #c9a75b88;border-radius:999px;background:#b6922c22;color:#ffe3a0;font-size:11px;font-weight:900;letter-spacing:.06em}
+    .cover-showcase{margin-top:43px;position:relative;border:1px solid #8dcbdf44;border-radius:18px;overflow:hidden;background:#05253a;box-shadow:0 16px 50px #001c2d81}
+    .cover-showcase img{width:100%;height:auto;aspect-ratio:1672/941;object-fit:cover;display:block}
+    .cover-showcase figcaption{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 19px;color:#c5dfe8;font-size:11px;background:#0c3049;line-height:1.6}
+    .cover-showcase figcaption strong{color:#fff}
+    .award-photo{overflow:hidden;min-width:0;border-radius:15px;background:#fff;border:1px solid var(--line)}
+    .award-photo .media-frame.award-image{aspect-ratio:1230/720}
+    .award-photo .media-frame img{object-fit:contain;background:#071e2c}
+    .award-photo figcaption{padding:10px 14px;color:#6a7b88;font-size:11px}
+    .award-amount{color:#bb892e;font-size:20px;letter-spacing:0}
+    .poster-showcase{display:grid;grid-template-columns:185px minmax(0,1fr);gap:25px;align-items:center;margin-top:23px;padding:18px;background:#fff;border:1px solid var(--line);border-radius:16px}
+    .poster-showcase>a{display:block;overflow:hidden;border-radius:10px;border:1px solid #dfe7ec;box-shadow:0 6px 18px #143d5517}
+    .poster-showcase img{width:100%;height:250px;object-fit:cover;object-position:top center}
+    .poster-showcase h3{font-size:19px;margin:8px 0}.poster-showcase p{font-size:12px;color:#5e7286;line-height:1.8}
+    .poster-link{display:inline-block;margin-top:12px;font-size:12px;color:#2373b8;font-weight:850}
+    .poster-link:hover{text-decoration:underline}
+    @media(max-width:760px){.cover-showcase{margin-top:29px}.cover-showcase figcaption{flex-direction:column;align-items:flex-start;gap:4px}.poster-showcase{grid-template-columns:115px minmax(0,1fr);gap:14px}.poster-showcase img{height:180px}}
+    @media(max-width:440px){.poster-showcase{grid-template-columns:1fr}.poster-showcase>a{max-width:180px}.cover-showcase figcaption{font-size:10px}}
     @media(max-width:1000px){.primary-nav{gap:13px;font-size:11px}.hero-grid{gap:25px}.flow-grid{grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr;gap:3px}.flow-node{padding:14px 7px}.flow-node h3{font-size:11px}}
     @media(max-width:760px){.wrap{width:min(100% - 32px,1130px)}.nav-inner{min-height:68px}.menu-button{display:flex}.primary-nav{position:absolute;display:none;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;background:#102d48;padding:19px 22px;gap:17px;border-bottom:1px solid #52708b;z-index:20}.primary-nav.is-open{display:flex}.hero{padding:22px 0 56px}.breadcrumb{margin-bottom:32px}.hero-grid,.overview-grid,.power-grid,.connect-grid,.data-grid,.award-layout{grid-template-columns:1fr}.device-visual{height:295px}.section{padding:57px 0}.feature-grid,.gallery{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:1fr 1fr}.flow-grid{grid-template-columns:1fr;gap:6px}.flow-arrow{transform:rotate(90deg);font-size:18px;line-height:1.1}.flow-node{min-height:94px;padding:10px;flex-direction:row;text-align:left;gap:13px;justify-content:flex-start}.flow-node svg{margin:0;flex:0 0 34px}.flow-node h3{font-size:12px}.flow-node p{font-size:10px}.cta-inner{flex-direction:column;align-items:flex-start}}
     @media(max-width:550px){h1{font-size:42px}.hero-art{padding:10px}.device-visual{height:255px}.visual-note{font-size:10px}.hero-fact strong{font-size:16px}.feature-grid,.gallery{grid-template-columns:1fr}.panel{padding:21px}.gallery .media-frame{aspect-ratio:16/9}.hero-grid{gap:32px}}
@@ -59,15 +79,15 @@
   </div></header>
   <main id="main">
     <section class="hero" aria-labelledby="project-title"><div class="wrap">
-      <nav class="breadcrumb" aria-label="Đường dẫn"><a href="../index.html">Portfolio</a><span>/</span><a href="../index.html#projects">Dự án</a><span>/</span><span>LoRaWAN Water Level Monitoring</span></nav>
+      <nav class="breadcrumb" aria-label="Đường dẫn"><a href="../index.html">Portfolio</a><span>/</span><a href="../index.html#projects">Dự án</a><span>/</span><span>FLOODGUARD</span></nav>
       <div class="hero-grid">
         <div>
-          <div class="eyebrow">EMBEDDED SYSTEMS / IOT / HARDWARE</div>
-          <h1 id="project-title">LoRaWAN<br><span>Water Level</span><br>Monitoring</h1>
-          <p class="role">Thiết bị đo và giám sát mực nước từ xa · RAK3172</p>
-          <p class="lead">Thiết kế và chế tạo thiết bị đo mực nước sử dụng cảm biến analog và module RAK3172. Dữ liệu được gửi qua mạng LoRaWAN, chu kỳ đo có thể cấu hình từ xa bằng downlink. Dự án kết hợp lập trình firmware, thiết kế PCB và lắp ráp mạch thực tế.</p>
-          <div class="chips"><span>RAK3172</span><span>LoRaWAN OTAA</span><span>Arduino / C++</span><span>PCB Design</span><span>Low Power</span><span>Remote Configuration</span></div>
-          <div class="btn-row"><a class="btn btn-primary" href="#architecture">Khám phá hệ thống ↓</a><a class="btn btn-outline" href="#gallery">Xem PCB và ảnh thực tế ↗</a></div>
+          <div class="eyebrow">FLOODGUARD · SMART CAMPUS 2025</div>
+          <h1 id="project-title">FLOOD<span>GUARD</span></h1>
+          <p class="role">Hệ thống giám sát mực nước và cảnh báo ngập lụt sớm</p><div class="prize-pill">🏆 GIẢI NHÌ · SMART CAMPUS 2025</div>
+          <p class="lead">FLOODGUARD là giải pháp giám sát mực nước tại các khu vực có nguy cơ ngập trong khuôn viên trường. Node cảm biến sử dụng RAK3172 truyền dữ liệu qua LoRaWAN đến hệ thống giám sát, hỗ trợ hiển thị mức nước và cảnh báo trên dashboard. Dự án bao gồm firmware, thiết kế và chế tạo PCB; chu kỳ báo cáo có thể thay đổi từ xa qua downlink.</p>
+          <div class="chips"><span>RAK3172</span><span>LoRaWAN</span><span>Embedded C++</span><span>PCB Design</span><span>Low Power</span><span>Web Dashboard</span></div>
+          <div class="btn-row"><a class="btn btn-primary" href="#architecture">Khám phá hệ thống ↓</a><a class="btn btn-outline" href="#gallery">PCB &amp; nguyên mẫu ↗</a><a class="btn btn-outline" href="#award">Giải thưởng ↗</a></div>
         </div>
         <aside class="hero-art" aria-label="Minh họa hệ thống đo mực nước">
           <div class="art-top"><span><span class="live-dot"></span>RAK3172 · WATER LEVEL NODE</span><span>LoRaWAN</span></div>
@@ -92,13 +112,14 @@
           <div class="hero-facts"><div class="hero-fact"><strong>0–5 m</strong><span>Giới hạn quy đổi</span></div><div class="hero-fact"><strong>30</strong><span>Mẫu mỗi lần đo</span></div><div class="hero-fact"><strong>120 s</strong><span>Chu kỳ mặc định</span></div></div>
         </aside>
       </div>
+      <figure class="cover-showcase"><img src="../data/rak-water-level-cover.jpg" alt="Ảnh minh họa tổng quan FLOODGUARD: cảm biến mực nước, node RAK3172, kết nối LoRaWAN, gateway và dashboard cảnh báo" width="1672" height="941" fetchpriority="high" decoding="async"><figcaption><span><strong>FLOODGUARD — Tổng quan hệ thống</strong></span><span>Minh họa ý tưởng · Hình ảnh PCB thật sẽ được cập nhật riêng</span></figcaption></figure>
     </div></section>
 
     <section class="section" id="overview"><div class="wrap">
-      <div class="section-head"><div class="eyebrow">01 / PROJECT OVERVIEW</div><h2>Từ ý tưởng đến thiết bị phần cứng thực tế</h2><p>Dự án được xây dựng hướng tới việc tự động thu thập và truyền dữ liệu mực nước từ các điểm đo, giảm nhu cầu đọc số liệu trực tiếp tại hiện trường. Thiết kế tập trung vào kết nối không dây tầm xa, khả năng điều chỉnh tần suất báo cáo và quản lý thời gian hoạt động của thiết bị.</p></div>
+      <div class="section-head"><div class="eyebrow">01 / PROJECT OVERVIEW</div><h2>Từ bài toán ngập nước đến hệ thống cảnh báo sớm</h2><p>FLOODGUARD được phát triển trong bối cảnh các vị trí thoát nước trong khuôn viên trường có thể ngập nhanh khi mưa lớn. Giải pháp sử dụng các node LoRaWAN chi phí thấp để theo dõi mực nước từ xa, kết nối tới máy chủ và hiển thị trạng thái trên bản đồ/dashboard nhằm hỗ trợ cảnh báo kịp thời.</p></div>
       <div class="overview-grid">
         <article class="panel"><div class="eyebrow">BÀI TOÁN</div><h3>Đo mực nước và truyền dữ liệu từ xa</h3><p>Hệ thống lấy tín hiệu điện áp từ cảm biến qua chân ADC của RAK3172, quy đổi sang độ cao mực nước và đóng gói giá trị đo để truyền qua LoRaWAN.</p><p>Chu kỳ lấy mẫu và báo cáo không phải cố định: thiết bị có thể nhận lệnh cấu hình mới qua downlink sau một lần uplink.</p></article>
-        <article class="panel"><div class="eyebrow">PHẦN VIỆC TRIỂN KHAI</div><h3>Firmware, PCB và lắp ráp</h3><ul><li>Phát triển firmware điều khiển module RAK3172.</li><li>Tích hợp cảm biến analog, đọc ADC và hiệu chuẩn tuyến tính.</li><li>Cấu hình LoRaWAN OTAA và bản tin uplink/downlink.</li><li>Thiết kế sơ đồ nguyên lý và layout PCB.</li><li>Chế tạo, lắp ráp và kiểm tra mạch thực tế.</li></ul></article>
+        <article class="panel"><div class="eyebrow">PHẦN VIỆC TRIỂN KHAI</div><h3>Firmware, PCB và lắp ráp</h3><ul><li>Phát triển firmware điều khiển module RAK3172.</li><li>Tích hợp cảm biến analog, đọc ADC và hiệu chuẩn tuyến tính.</li><li>Cấu hình LoRaWAN OTAA và bản tin uplink/downlink.</li><li>Thiết kế sơ đồ nguyên lý và layout PCB.</li><li>Chế tạo, lắp ráp và kiểm tra mạch thực tế; tiếp tục thiết kế lại PCB sau phiên bản trình bày tại cuộc thi.</li></ul></article>
       </div>
       <div class="metrics"><div class="metric"><strong>RAK3172</strong><span>Vi điều khiển / LoRaWAN</span></div><div class="metric"><strong>PB4</strong><span>Đầu vào cảm biến analog</span></div><div class="metric"><strong>2 bytes</strong><span>Payload uplink</span></div><div class="metric"><strong>Class A</strong><span>Chế độ LoRaWAN</span></div></div>
     </div></section>
@@ -116,7 +137,7 @@
     </div></section>
 
     <section class="section" id="architecture"><div class="wrap">
-      <div class="section-head"><div class="eyebrow">03 / SYSTEM ARCHITECTURE</div><h2>Kiến trúc thu thập và truyền dữ liệu</h2><p>Tuyến xử lý tín hiệu được thiết kế đơn giản: cảm biến cung cấp tín hiệu analog, RAK3172 xử lý và truyền giá trị mực nước qua mạng LoRaWAN. Phía máy chủ có thể tiếp nhận, giải mã và lưu dữ liệu theo hạ tầng triển khai.</p></div>
+      <div class="section-head"><div class="eyebrow">03 / SYSTEM ARCHITECTURE</div><h2>Kiến trúc đo – truyền – giám sát – cảnh báo</h2><p>Cảm biến chuyển mực nước thành tín hiệu analog để RAK3172 đọc và xử lý. Dữ liệu được truyền qua LoRaWAN đến gateway và máy chủ. Poster thi năm 2025 giới thiệu dashboard hiển thị vị trí node, mực nước và trạng thái cảnh báo theo bản đồ.</p></div>
       <div class="diagram"><div class="flow-grid">
         <div class="flow-node"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M6 5v25h24V5M6 17q6-4 12 0t12 0M18 4v9m-5-4 5 4 5-4"/></svg><div><h3>Cảm biến mực nước</h3><p>Điện áp analog</p></div></div>
         <div class="flow-arrow" aria-hidden="true">→</div>
@@ -125,7 +146,7 @@
         <div class="flow-node"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 30V18m-6 12h12M11 13q7-7 14 0M7 9q11-11 22 0M3 5q15-15 30 0"/></svg><div><h3>Mạng LoRaWAN</h3><p>Uplink / downlink · OTAA</p></div></div>
         <div class="flow-arrow" aria-hidden="true">→</div>
         <div class="flow-node"><svg viewBox="0 0 36 36" aria-hidden="true"><rect x="6" y="5" width="24" height="9" rx="2"/><rect x="6" y="16" width="24" height="9" rx="2"/><path d="M11 10h2m-2 11h2M18 25v6m-7 0h14"/></svg><div><h3>Ứng dụng nhận dữ liệu</h3><p>Giải mã, lưu hoặc hiển thị*</p></div></div>
-      </div><p class="diagram-caption">* Khối ứng dụng phía máy chủ thể hiện khả năng tích hợp của hệ thống; mã nguồn được cung cấp chỉ xác nhận xử lý ở thiết bị RAK3172.</p></div>
+      </div><p class="diagram-caption">* Dashboard và cảnh báo được trình bày trong poster cuộc thi 2025; mã nguồn .ino đính kèm chỉ thể hiện firmware trên node RAK3172.</p></div>
       <div class="data-grid">
         <article class="panel"><div class="eyebrow">UPLINK / DEVICE → NETWORK</div><h3>Gửi chiều cao mực nước</h3><p>Dữ liệu được chuyển thành số nguyên centimet và mã hóa trên 2 byte theo thứ tự big-endian. Thiết bị truyền trên <strong>FPort 2</strong>.</p><div class="data-code"><div class="mono"><span class="dim">Ví dụ minh họa: mực nước 125 cm</span>
 <span class="hi">125</span> (decimal) = <span class="yellow">0x007D</span>
@@ -158,40 +179,33 @@ Period = <span class="hi">300 seconds</span></div></div><p class="data-caption">
     </div></section>
 
     <section class="section" id="hardware"><div class="wrap">
-      <div class="section-head"><div class="eyebrow">05 / HARDWARE DEVELOPMENT</div><h2>Thiết kế PCB và chế tạo nguyên mẫu</h2><p>Đây là phần việc phần cứng đã thực hiện trong dự án: từ sơ đồ nguyên lý, bố trí đường mạch đến bảng mạch đã chế tạo. Các vị trí ảnh bên dưới được chuẩn bị sẵn để chèn hình thực tế từ thư mục <code>data</code> trên GitHub.</p></div>
+      <div class="section-head"><div class="eyebrow">05 / HARDWARE DEVELOPMENT</div><h2>Thiết kế PCB và chế tạo nguyên mẫu</h2><p>Nhóm đã thiết kế sơ đồ nguyên lý, layout PCB và chế tạo mạch thực tế. <strong>PCB đã được thiết kế lại so với phiên bản xuất hiện trên poster cuộc thi năm 2025.</strong> Các khung bên dưới ưu tiên hình bản mạch mới; bạn có thể tải đúng tên ảnh vào thư mục <code>data/</code> trên GitHub để hiển thị.</p></div>
       <div class="gallery" id="gallery">
-        <figure class="wide"><div class="media-frame cover" data-photo><img src="../data/rak-water-level-cover.jpg" alt="Ảnh tổng quan dự án RAK3172 đo và giám sát mực nước" loading="lazy"><div class="missing" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="5" y="7" width="38" height="34" rx="4"/><path d="M9 31l10-10 9 8 6-5 10 10M15 16h.1"/></svg><strong>Ảnh bìa / tổng quan dự án (tùy chọn)</strong><span>../data/rak-water-level-cover.jpg</span></div></div><figcaption><h3>Ảnh tổng quan dự án</h3><p>Ảnh toàn cảnh mô hình hoặc thiết bị hoạt động thực tế, dùng làm ảnh đại diện cho dự án.</p></figcaption></figure>
-        <figure><div class="media-frame" data-photo><img src="../data/rak-water-level-schematic.jpg" alt="Sơ đồ nguyên lý PCB của hệ thống đo mực nước RAK3172" loading="lazy"><div class="missing" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="5" y="7" width="38" height="34" rx="4"/><path d="M9 31l10-10 9 8 6-5 10 10M15 16h.1"/></svg><strong>Ảnh sơ đồ nguyên lý</strong><span>../data/rak-water-level-schematic.jpg</span></div></div><figcaption><h3>01. Sơ đồ nguyên lý</h3><p>Schematic: kết nối RAK3172, đầu vào cảm biến và các khối phần cứng theo bản thiết kế thực tế.</p></figcaption></figure>
-        <figure><div class="media-frame" data-photo><img src="../data/rak-water-level-pcb-layout.jpg" alt="Bản thiết kế layout PCB hệ thống đo mực nước" loading="lazy"><div class="missing" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="5" y="7" width="38" height="34" rx="4"/><path d="M9 31l10-10 9 8 6-5 10 10M15 16h.1"/></svg><strong>Ảnh thiết kế PCB</strong><span>../data/rak-water-level-pcb-layout.jpg</span></div></div><figcaption><h3>02. PCB layout</h3><p>Ảnh chụp màn hình bố trí linh kiện, routing và lớp đồng của bo mạch.</p></figcaption></figure>
-        <figure><div class="media-frame" data-photo><img src="../data/rak-water-level-pcb-real.jpg" alt="Bo mạch PCB đã in và lắp ráp linh kiện thực tế" loading="lazy"><div class="missing" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="5" y="7" width="38" height="34" rx="4"/><path d="M9 31l10-10 9 8 6-5 10 10M15 16h.1"/></svg><strong>Ảnh PCB thực tế</strong><span>../data/rak-water-level-pcb-real.jpg</span></div></div><figcaption><h3>03. Bo mạch đã chế tạo</h3><p>Ảnh bảng mạch vật lý sau khi sản xuất và lắp linh kiện.</p></figcaption></figure>
+        <figure><div class="media-frame" data-photo><img src="../data/rak-water-level-schematic.jpg" alt="Sơ đồ nguyên lý PCB của hệ thống đo mực nước RAK3172" loading="lazy"><div class="missing" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="5" y="7" width="38" height="34" rx="4"/><path d="M9 31l10-10 9 8 6-5 10 10M15 16h.1"/></svg><strong>Ảnh sơ đồ nguyên lý</strong><span>../data/rak-water-level-schematic.jpg</span></div></div><figcaption><h3>01. Sơ đồ nguyên lý phiên bản mới</h3><p>Ảnh sơ đồ nguyên lý phiên bản PCB mới nhất (bổ sung khi bạn chọn ảnh).</p></figcaption></figure>
+        <figure><div class="media-frame" data-photo><img src="../data/rak-water-level-pcb-layout.jpg" alt="Bản thiết kế layout PCB hệ thống đo mực nước" loading="lazy"><div class="missing" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="5" y="7" width="38" height="34" rx="4"/><path d="M9 31l10-10 9 8 6-5 10 10M15 16h.1"/></svg><strong>Ảnh thiết kế PCB</strong><span>../data/rak-water-level-pcb-layout.jpg</span></div></div><figcaption><h3>02. PCB layout phiên bản mới</h3><p>Layout mới sau khi thiết kế lại PCB; ưu tiên ảnh routing/3D của bản mới.</p></figcaption></figure>
+        <figure><div class="media-frame" data-photo><img src="../data/rak-water-level-pcb-real.jpg" alt="Bo mạch PCB đã in và lắp ráp linh kiện thực tế" loading="lazy"><div class="missing" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="5" y="7" width="38" height="34" rx="4"/><path d="M9 31l10-10 9 8 6-5 10 10M15 16h.1"/></svg><strong>Ảnh PCB thực tế</strong><span>../data/rak-water-level-pcb-real.jpg</span></div></div><figcaption><h3>03. PCB phiên bản mới đã chế tạo</h3><p>Ảnh PCB mới đã in, hàn và hoàn thiện; không sử dụng ảnh của bản trước trong poster.</p></figcaption></figure>
         <figure><div class="media-frame" data-photo><img src="../data/rak-water-level-device.jpg" alt="Thiết bị đo mực nước RAK3172 hoàn thiện trong thực tế" loading="lazy"><div class="missing" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="5" y="7" width="38" height="34" rx="4"/><path d="M9 31l10-10 9 8 6-5 10 10M15 16h.1"/></svg><strong>Ảnh thiết bị thực tế</strong><span>../data/rak-water-level-device.jpg</span></div></div><figcaption><h3>04. Nguyên mẫu hoàn thiện</h3><p>Ảnh sản phẩm sau lắp ráp và thử nghiệm tại điểm đo.</p></figcaption></figure>
       </div>
       <div id="video-demo" class="video-box" hidden><video src="../data/rak-water-level-demo.mp4" controls playsinline preload="metadata" aria-label="Video demo thiết bị giám sát mực nước"></video><p>Video demo hoạt động thực tế của thiết bị.</p></div>
     </div></section>
 
     <section class="section alt" id="award"><div class="wrap">
-      <div class="section-head"><div class="eyebrow">06 / AWARDS &amp; RECOGNITION</div><h2>Thành tích của dự án</h2><p>Dự án đã được ghi nhận bằng giải thưởng. Thông tin tên giải, cuộc thi và hình ảnh minh chứng sẽ được bổ sung khi bạn cập nhật tư liệu chính thức.</p></div>
+      <div class="section-head"><div class="eyebrow">06 / AWARDS &amp; RECOGNITION</div><h2>Giải Nhì Smart Campus Campaign 2025</h2><p>FLOODGUARD đạt <strong>Giải Nhì</strong> tại Smart Campus Campaign Competition, nằm trong khuôn khổ <strong>International Symposium “Smart City: Experiences and Innovations” (ISSCEI 2025)</strong> tại Đà Nẵng, ngày 15–16/12/2025.</p></div>
       <div class="award-layout">
-        <figure><div class="media-frame award-image" data-photo><img src="../data/rak-water-level-award.jpg" alt="Ảnh giấy chứng nhận hoặc giải thưởng của dự án giám sát mực nước" loading="lazy"><div class="missing" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="5" y="7" width="38" height="34" rx="4"/><path d="M9 31l10-10 9 8 6-5 10 10M15 16h.1"/></svg><strong>Ảnh chứng nhận / giải thưởng</strong><span>../data/rak-water-level-award.jpg</span></div></div></figure>
-        <div class="award-content"><div class="award-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8v8a4 4 0 0 1-8 0V3Zm0 2H4v2a5 5 0 0 0 5 5m7-7h4v2a5 5 0 0 1-5 5m-3 3v4m-4 2h8"/></svg>PROJECT RECOGNITION</div><h3>Giải thưởng &amp; minh chứng thực tế</h3><p>Đây là khu vực giới thiệu kết quả nổi bật của dự án, kèm hình ảnh nhận giải, giấy chứng nhận hoặc ảnh trưng bày tại cuộc thi. Phần mô tả chi tiết đang để trống nhằm tránh ghi nhầm tên hoặc thứ hạng của giải thưởng.</p><p class="award-notes"><strong>Thông tin sẽ bổ sung:</strong> Tên giải thưởng · Cuộc thi/đơn vị tổ chức · Thời gian · Vai trò của thành viên trong dự án.</p></div>
+        <figure class="award-photo"><div class="media-frame award-image" data-photo><img src="../data/rak-water-level-award.jpg" alt="Ảnh bảng giải Nhì 3.000.000 VNĐ tại sự kiện Smart Campus 2025" loading="lazy"><div class="missing" aria-hidden="true"><strong>Ảnh giải Nhì</strong><span>../data/rak-water-level-award.jpg</span></div></div><figcaption>Ảnh bảng giải Nhì (3.000.000 VNĐ) do nhóm cung cấp.</figcaption></figure>
+        <div class="award-content"><div class="award-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8v8a4 4 0 0 1-8 0V3Zm0 2H4v2a5 5 0 0 0 5 5m7-7h4v2a5 5 0 0 1-5 5m-3 3v4m-4 2h8"/></svg>SECOND PRIZE · ISSCEI 2025</div><h3>FLOODGUARD — Giải Nhì<br><span class="award-amount">3.000.000 VNĐ</span></h3><p>Giải pháp hướng đến mạng giám sát ngập lụt chi phí thấp cho khuôn viên trường, kết hợp node RAK3172/LoRaWAN, gateway, máy chủ, dashboard và cảnh báo mức nước.</p><p class="award-notes"><strong>Thành viên nhóm trên poster:</strong> Lê Văn Hiếu · Hoàng Thành Vinh · Trần Duy Đăng.<br><strong>Đơn vị:</strong> Trường Đại học Bách khoa, Đại học Đà Nẵng.</p></div>
       </div>
+      <div class="poster-showcase"><a href="../data/rak-water-level-poster.jpg" target="_blank" rel="noopener noreferrer" aria-label="Xem toàn bộ poster FLOODGUARD năm 2025"><img src="../data/rak-water-level-poster.jpg" alt="Poster FLOODGUARD tại cuộc thi Smart Campus Campaign Competition 2025" loading="lazy"></a><div><div class="eyebrow">OFFICIAL TEAM POSTER · 2025</div><h3>Poster trình bày tại cuộc thi</h3><p>Poster gốc mô tả vấn đề ngập tại các điểm thoát nước, node LoRaWAN, kiến trúc gateway – server và dashboard theo dõi. <strong>Ảnh PCB trên poster thuộc phiên bản trước khi thiết kế lại mạch</strong>.</p><a class="poster-link" href="../data/rak-water-level-poster.jpg" target="_blank" rel="noopener noreferrer">Xem poster đầy đủ ↗</a></div></div>
     </div></section>
 
     <section class="section" id="results"><div class="wrap">
       <div class="section-head"><div class="eyebrow">07 / ENGINEERING HIGHLIGHTS</div><h2>Giá trị kỹ thuật và hướng mở rộng</h2><p>Dự án là sự kết hợp giữa lập trình hệ thống nhúng, giao thức IoT, xử lý dữ liệu cảm biến và quy trình chế tạo mạch. Các định hướng mở rộng bên dưới được tách riêng khỏi phạm vi firmware hiện tại.</p></div>
       <div class="connect-grid">
-        <article class="panel"><h3>Những kỹ thuật đã áp dụng</h3><ul><li>Lập trình Arduino/C++ trên RAK3172 và sử dụng API LoRaWAN.</li><li>Hiệu chuẩn cảm biến analog và tính giá trị trung bình.</li><li>Quy định giao thức đóng gói / giải mã dữ liệu 2 byte.</li><li>Nhận tham số cấu hình từ xa qua downlink.</li><li>Tổ chức chu kỳ sleep và chờ cửa sổ nhận.</li><li>Thiết kế, sản xuất và lắp ráp PCB thực tế.</li></ul></article>
-        <article class="panel"><h3>Hướng phát triển tiếp theo</h3><ul><li>Đo dòng tiêu thụ ở trạng thái đo, truyền và sleep để đánh giá pin.</li><li>Nếu cần: ngắt nguồn cảm biến bằng MOSFET có điều khiển GPIO.</li><li>Lưu cấu hình chu kỳ vào bộ nhớ không mất dữ liệu để giữ sau khi khởi động lại.</li><li>Bổ sung dashboard, biểu đồ lịch sử và cảnh báo ngưỡng mực nước.</li><li>Nghiên cứu cơ chế cập nhật firmware OTA nếu nền tảng và kiến trúc hỗ trợ.</li></ul><div class="callout" style="margin-top:17px">Các mục trong phần <strong>hướng phát triển</strong> chưa được xác nhận là có trong firmware hiện tại.</div></article>
+        <article class="panel"><h3>Những kỹ thuật đã áp dụng</h3><ul><li>Lập trình Arduino/C++ trên RAK3172 và sử dụng API LoRaWAN.</li><li>Hiệu chuẩn cảm biến analog và tính giá trị trung bình.</li><li>Quy định giao thức đóng gói / giải mã dữ liệu 2 byte.</li><li>Nhận tham số cấu hình từ xa qua downlink.</li><li>Tổ chức chu kỳ sleep và chờ cửa sổ nhận.</li><li>Thiết kế, sản xuất và lắp ráp PCB; phát triển phiên bản PCB mới.</li></ul></article>
+        <article class="panel"><h3>Hướng phát triển tiếp theo</h3><ul><li>Đo dòng tiêu thụ ở trạng thái đo, truyền và sleep để đánh giá pin.</li><li>Nếu cần: ngắt nguồn cảm biến bằng MOSFET có điều khiển GPIO.</li><li>Lưu cấu hình chu kỳ vào bộ nhớ không mất dữ liệu để giữ sau khi khởi động lại.</li><li>Mở rộng dashboard được trình bày trong cuộc thi: phân tích lịch sử, độ ổn định và cảnh báo đa kênh.</li><li>Nghiên cứu cơ chế cập nhật firmware OTA nếu nền tảng và kiến trúc hỗ trợ.</li></ul><div class="callout" style="margin-top:17px">Các mục trong phần <strong>hướng phát triển</strong> chưa được xác nhận là có trong firmware hiện tại.</div></article>
       </div>
     </div></section>
 
-    <section class="section alt" id="assets"><div class="wrap">
-      <div class="section-head"><div class="eyebrow">08 / MEDIA FILE REFERENCES</div><h2>Đường dẫn ảnh để cập nhật trên GitHub</h2><p>Trang HTML giả định được đặt trong thư mục <code>projects/</code> của portfolio, còn ảnh được đặt trong thư mục <code>data/</code> ở cấp thư mục gốc. Khi tải ảnh đúng tên, giao diện sẽ tự hiển thị thay cho khung giữ chỗ.</p></div>
-      <div class="overview-grid">
-        <article class="panel"><h3>Danh sách hình ảnh</h3><div class="file-list"><div>../data/rak-water-level-schematic.jpg</div><div>../data/rak-water-level-pcb-layout.jpg</div><div>../data/rak-water-level-pcb-real.jpg</div><div>../data/rak-water-level-device.jpg</div><div>../data/rak-water-level-award.jpg</div><div>../data/rak-water-level-cover.jpg <span>(tùy chọn)</span></div><div>../data/rak-water-level-demo.mp4 <span>(tùy chọn)</span></div></div></article>
-        <article class="panel"><h3>Cấu trúc thư mục đề xuất</h3><div class="file-list"><div>portfolio/</div><div>├── index.html</div><div>├── projects/</div><div>│ &nbsp; └── rak-water-level.html</div><div>└── data/</div><div>&nbsp;&nbsp;&nbsp;&nbsp;├── rak-water-level-schematic.jpg</div><div>&nbsp;&nbsp;&nbsp;&nbsp;├── rak-water-level-pcb-layout.jpg</div><div>&nbsp;&nbsp;&nbsp;&nbsp;├── rak-water-level-pcb-real.jpg</div><div>&nbsp;&nbsp;&nbsp;&nbsp;├── rak-water-level-device.jpg</div><div>&nbsp;&nbsp;&nbsp;&nbsp;└── rak-water-level-award.jpg</div></div><p class="fine" style="margin-top:12px">Nếu đặt HTML ngay ở thư mục gốc, đổi tiền tố <span class="code-inline">../data/</span> thành <span class="code-inline">data/</span>.</p></article>
-      </div>
-    </div></section>
 
     <section class="case-cta"><div class="wrap cta-inner"><div><h2>Khám phá các dự án khác</h2><p>Trở lại portfolio để xem thêm dự án phần mềm, IoT, hệ thống nhúng và UAV.</p></div><a class="btn btn-primary" href="../index.html#projects">Về danh sách dự án ↗</a></div></section>
   </main>
