@@ -125,7 +125,7 @@
     </div></section>
 
     <section class="section alt" id="features"><div class="wrap">
-      <div class="section-head"><div class="eyebrow">02 / KEY FEATURES</div><h2>Những chức năng chính</h2><p>Các chức năng dưới đây được đối chiếu với phiên bản firmware <strong>RAKdonuocV8.ino</strong> để phân biệt tính năng đã lập trình và những nội dung mở rộng trong tương lai.</p></div>
+      <div class="section-head"><div class="eyebrow">02 / KEY FEATURES</div><h2>Những chức năng chính</h2></div>
       <div class="feature-grid">
         <article class="feature"><span class="feature-no">01</span><h3>Đo mức nước qua ADC</h3><p>Đọc tín hiệu điện áp tại chân PB4 bằng ADC 10-bit, tham chiếu 3,3 V và tính trung bình nhiều lần đọc liên tiếp.</p></article>
         <article class="feature"><span class="feature-no">02</span><h3>Hiệu chuẩn theo hai điểm</h3><p>Quy đổi điện áp sang mức nước dựa trên hai mốc được khai báo trong firmware: 0 cm tại 0,500 V và 30 cm tại 0,745 V.</p></article>
@@ -137,7 +137,7 @@
     </div></section>
 
     <section class="section" id="architecture"><div class="wrap">
-      <div class="section-head"><div class="eyebrow">03 / SYSTEM ARCHITECTURE</div><h2>Kiến trúc đo – truyền – giám sát – cảnh báo</h2><p>Cảm biến chuyển mực nước thành tín hiệu analog để RAK3172 đọc và xử lý. Dữ liệu được truyền qua LoRaWAN đến gateway và máy chủ. Poster thi năm 2025 giới thiệu dashboard hiển thị vị trí node, mực nước và trạng thái cảnh báo theo bản đồ.</p></div>
+      <div class="section-head"><div class="eyebrow">03 / SYSTEM ARCHITECTURE</div><h2>Kiến trúc đo – truyền – giám sát – cảnh báo</h2><p>Cảm biến chuyển mực nước thành tín hiệu analog để RAK3172 đọc và xử lý. Dữ liệu được truyền qua LoRaWAN đến gateway và máy chủ.</p></div>
       <div class="diagram"><div class="flow-grid">
         <div class="flow-node"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M6 5v25h24V5M6 17q6-4 12 0t12 0M18 4v9m-5-4 5 4 5-4"/></svg><div><h3>Cảm biến mực nước</h3><p>Điện áp analog</p></div></div>
         <div class="flow-arrow" aria-hidden="true">→</div>
@@ -172,7 +172,6 @@ Period = <span class="hi">300 seconds</span></div></div><p class="data-caption">
           <div class="data-code" style="margin:17px 0"><div class="mono"><span class="dim">// Ngủ trong thời gian còn lại</span>
 <span class="hi">api.system.sleep.all</span>(sleep_ms);</div></div>
           <ul class="checklist"><li>Có chế độ ngủ theo chu kỳ.</li><li>Có thể thay đổi chu kỳ qua LoRaWAN downlink.</li><li>Có đợi quá trình truyền và cửa sổ nhận trước khi ngủ.</li></ul>
-          <div class="callout"><strong>Lưu ý về MOSFET:</strong> Trong phiên bản firmware này chưa thấy mã điều khiển GPIO để tắt nguồn cảm biến qua MOSFET. Vì vậy, trang không khẳng định thiết bị đã triển khai cơ chế ngắt nguồn ngoại vi bằng MOSFET. Có thể bổ sung thông tin nếu kiểm tra lại sơ đồ PCB hoặc firmware khác.</div>
         </article>
       </div>
       <div class="callout" style="margin-top:22px"><strong>Phân biệt OTAA và OTA:</strong> <strong>OTAA</strong> (Over-the-Air Activation) được sử dụng để gia nhập mạng LoRaWAN. Việc gửi downlink để đổi chu kỳ đo là <strong>cấu hình từ xa</strong>, không đồng nghĩa với <strong>OTA firmware update</strong> (cập nhật chương trình qua mạng). Bản firmware này chưa cho thấy chức năng cập nhật firmware OTA.</div>
@@ -192,7 +191,7 @@ Period = <span class="hi">300 seconds</span></div></div><p class="data-caption">
     <section class="section alt" id="award"><div class="wrap">
       <div class="section-head"><div class="eyebrow">06 / AWARDS &amp; RECOGNITION</div><h2>Giải Nhì Smart Campus Campaign 2025</h2><p>FLOODGUARD đạt <strong>Giải Nhì</strong> tại Smart Campus Campaign Competition, nằm trong khuôn khổ <strong>International Symposium “Smart City: Experiences and Innovations” (ISSCEI 2025)</strong> tại Đà Nẵng, ngày 15–16/12/2025.</p></div>
       <div class="award-layout">
-        <figure class="award-photo"><div class="media-frame award-image" data-photo><img src="../data/rak-water-level-award.jpg" alt="Ảnh bảng giải Nhì 3.000.000 VNĐ tại sự kiện Smart Campus 2025" loading="lazy"><div class="missing" aria-hidden="true"><strong>Ảnh giải Nhì</strong><span>../data/rak-water-level-award.jpg</span></div></div><figcaption>Ảnh bảng giải Nhì (3.000.000 VNĐ) do nhóm cung cấp.</figcaption></figure>
+        <figure class="award-photo"><div class="media-frame award-image" data-photo><img src="../data/rak-water-level-award.jpg" alt="Ảnh bảng giải Nhì 3.000.000 VNĐ tại sự kiện Smart Campus 2025" loading="lazy"><div class="missing" aria-hidden="true"><strong>Ảnh giải Nhì</strong><span>../data/rak-water-level-award.jpg</span></div></div><figcaption>Ảnh bảng giải Nhì (3.000.000 VNĐ).</figcaption></figure>
         <div class="award-content"><div class="award-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8v8a4 4 0 0 1-8 0V3Zm0 2H4v2a5 5 0 0 0 5 5m7-7h4v2a5 5 0 0 1-5 5m-3 3v4m-4 2h8"/></svg>SECOND PRIZE · ISSCEI 2025</div><h3>FLOODGUARD — Giải Nhì<br><span class="award-amount">3.000.000 VNĐ</span></h3><p>Giải pháp hướng đến mạng giám sát ngập lụt chi phí thấp cho khuôn viên trường, kết hợp node RAK3172/LoRaWAN, gateway, máy chủ, dashboard và cảnh báo mức nước.</p><p class="award-notes"><strong>Thành viên nhóm trên poster:</strong> Lê Văn Hiếu · Hoàng Thành Vinh · Trần Duy Đăng.<br><strong>Đơn vị:</strong> Trường Đại học Bách khoa, Đại học Đà Nẵng.</p></div>
       </div>
       <div class="poster-showcase"><a href="../data/rak-water-level-poster.jpg" target="_blank" rel="noopener noreferrer" aria-label="Xem toàn bộ poster FLOODGUARD năm 2025"><img src="../data/rak-water-level-poster.jpg" alt="Poster FLOODGUARD tại cuộc thi Smart Campus Campaign Competition 2025" loading="lazy"></a><div><div class="eyebrow">OFFICIAL TEAM POSTER · 2025</div><h3>Poster trình bày tại cuộc thi</h3><p>Poster gốc mô tả vấn đề ngập tại các điểm thoát nước, node LoRaWAN, kiến trúc gateway – server và dashboard theo dõi. <strong>Ảnh PCB trên poster thuộc phiên bản trước khi thiết kế lại mạch</strong>.</p><a class="poster-link" href="../data/rak-water-level-poster.jpg" target="_blank" rel="noopener noreferrer">Xem poster đầy đủ ↗</a></div></div>
